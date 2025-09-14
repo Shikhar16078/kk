@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { personalData } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 export function Hero() {
   return (
@@ -46,7 +47,12 @@ export function Hero() {
             </div>
           </div>
           <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
-            <div className="relative h-72 w-72 overflow-hidden rounded-full border-4 border-primary/50 shadow-2xl shadow-primary/20 sm:h-96 sm:w-96">
+            <div
+              className={cn(
+                'relative h-72 w-72 overflow-hidden rounded-full border-4 border-primary/50',
+                'animate-neon-ring'
+              )}
+            >
               <Image
                 src="/profile.jpg"
                 alt="Profile Photo"

@@ -78,10 +78,21 @@ export default {
             height: '0',
           },
         },
+        'neon-ring': {
+          '0%, 100%': {
+            boxShadow:
+              '0 0 5px hsl(var(--primary) / 0.8), 0 0 10px hsl(var(--primary) / 0.8), 0 0 20px hsl(var(--primary) / 0.6), 0 0 30px hsl(var(--primary) / 0.4), 0 0 40px hsl(var(--primary) / 0.2)',
+          },
+          '50%': {
+            boxShadow:
+              '0 0 10px hsl(var(--primary) / 0.8), 0 0 20px hsl(var(--primary) / 0.8), 0 0 30px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--primary) / 0.4), 0 0 50px hsl(var(--primary) / 0.2)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'neon-ring': 'neon-ring 4s linear infinite',
       },
     },
   },
