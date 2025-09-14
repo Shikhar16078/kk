@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { personalData } from '@/lib/data';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -49,7 +48,7 @@ export function Hero() {
           <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
             <div className="relative h-72 w-72 overflow-hidden rounded-full border-4 border-primary/50 shadow-2xl shadow-primary/20 sm:h-96 sm:w-96">
               <Image
-                src="/Profile-Photo.jpeg"
+                src="/profile.jpg"
                 alt="Profile Photo"
                 width={400}
                 height={400}
