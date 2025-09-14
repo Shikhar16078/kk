@@ -8,7 +8,7 @@ import type {
 } from '@/lib/types';
 
 export const personalData: PersonalData = {
-  name: 'Alex Doe',
+  name: 'Kshittiz Kumar',
   title: 'Senior Software Developer',
   bio: 'A passionate Full Stack Software Developer with over 5 years of experience, I specialize in creating robust and scalable web applications. My expertise spans across modern frontend frameworks like React and Next.js, and backend technologies including Node.js and Python.',
   image: 'profile-photo',
