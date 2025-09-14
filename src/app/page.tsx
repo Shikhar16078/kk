@@ -17,16 +17,16 @@ export default function Home() {
           <Hero />
         </AnimatedSection>
         <AnimatedSection>
-          <Skills />
-        </AnimatedSection>
-        <AnimatedSection>
           <Experience />
         </AnimatedSection>
         <AnimatedSection>
-          <Education />
+          <Skills />
         </AnimatedSection>
         <AnimatedSection>
           <Projects />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Education />
         </AnimatedSection>
         <AnimatedSection>
           <Contact />

@@ -125,9 +125,9 @@ export const projects: Project[] = [
 
 export const navLinks: NavLink[] = [
   { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
   { href: '#experience', label: 'Experience' },
-  { href: '#education', label: 'Education' },
+  { href: '#skills', label: 'Skills' },
   { href: '#projects', label: 'Projects' },
+  { href: '#education', label: 'Education' },
   { href: '#contact', label: 'Contact' },
 ];
