@@ -5,8 +5,6 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 export function Hero() {
-  const profileImage = PlaceHolderImages.find((p) => p.id === personalData.image);
-
   return (
     <section id="about" className="py-24 sm:py-32">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -49,19 +47,17 @@ export function Hero() {
             </div>
           </div>
           <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
-            {profileImage && (
-              <div className="relative h-72 w-72 overflow-hidden rounded-full border-4 border-primary/50 shadow-2xl shadow-primary/20 sm:h-96 sm:w-96">
-                <Image
-                  src={profileImage.imageUrl}
-                  alt={profileImage.description}
-                  width={400}
-                  height={400}
-                  priority
-                  className="object-cover"
-                  data-ai-hint={profileImage.imageHint}
-                />
-              </div>
-            )}
+            <div className="relative h-72 w-72 overflow-hidden rounded-full border-4 border-primary/50 shadow-2xl shadow-primary/20 sm:h-96 sm:w-96">
+              <Image
+                src="/Profile-Photo.jpeg"
+                alt="Profile Photo"
+                width={400}
+                height={400}
+                priority
+                className="object-cover"
+                data-ai-hint="professional headshot"
+              />
+            </div>
           </div>
         </div>
       </div>
