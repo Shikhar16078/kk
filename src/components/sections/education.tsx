@@ -7,7 +7,7 @@ import {
   CardContent,
   CardDescription,
 } from '@/components/ui/card';
-import { GraduationCap, CalendarDays } from 'lucide-react';
+import { GraduationCap, CalendarDays, CheckCircle } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
@@ -28,7 +28,7 @@ export function Education() {
             className="w-full"
           >
             <AccordionItem value={`item-${index}`} asChild>
-              <Card className="flex flex-col h-full">
+              <Card className="flex h-full flex-col">
                 <CardHeader>
                   <div className="flex items-center gap-4">
                     <div className="rounded-full bg-primary/10 p-3">
@@ -44,21 +44,31 @@ export function Education() {
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent className="flex-grow flex flex-col">
+                <CardContent className="flex flex-grow flex-col">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <CalendarDays className="h-4 w-4" />
                     <span>
                       {edu.startDate} - {edu.endDate}
                     </span>
                   </div>
+                  <p className="mt-4 text-muted-foreground">
+                    {edu.description}
+                  </p>
                   <div className="mt-auto">
                     <AccordionTrigger className="mt-4 text-sm hover:no-underline">
-                      Show More
+                      Relevant Courses
                     </AccordionTrigger>
                     <AccordionContent>
-                      <p className="pt-4 text-muted-foreground">
-                        {edu.description}
-                      </p>
+                      <ul className="grid grid-cols-1 gap-2 pt-4 sm:grid-cols-2">
+                        {edu.courses.map((course) => (
+                          <li key={course} className="flex items-center gap-2">
+                            <CheckCircle className="h-4 w-4 shrink-0 text-primary" />
+                            <span className="text-muted-foreground">
+                              {course}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
                     </AccordionContent>
                   </div>
                 </CardContent>

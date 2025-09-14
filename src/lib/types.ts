@@ -36,6 +36,7 @@ export type Education = {
   startDate: string;
   endDate: string;
   description: string;
+  courses: string[];
 };
 
 export type Project = {

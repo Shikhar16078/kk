@@ -62,7 +62,14 @@ export const education: Education[] = [
     startDate: '2016',
     endDate: '2018',
     description:
-      'Focused on advanced topics in machine learning, including deep learning and neural networks, and explored distributed systems with a focus on scalability and fault tolerance. My thesis involved developing and publishing a novel algorithm for efficient data processing in large-scale systems.',
+      'Focused on advanced topics in machine learning and distributed systems, with a thesis on a novel algorithm for efficient data processing in large-scale systems.',
+    courses: [
+      'Advanced Algorithms',
+      'Distributed Systems',
+      'Machine Learning',
+      'Deep Learning',
+      'Cloud Computing',
+    ],
   },
   {
     institution: 'State University',
@@ -70,7 +77,14 @@ export const education: Education[] = [
     startDate: '2012',
     endDate: '2016',
     description:
-      'Graduated with honors, acquiring a strong foundation in software development principles, data structures, and algorithms. As an active member of the coding club, I led a team that won first place in a regional hackathon by developing a mobile app for local community engagement.',
+      'Graduated with honors, acquiring a strong foundation in software development principles. Led a team to win first place in a regional hackathon.',
+    courses: [
+      'Data Structures and Algorithms',
+      'Software Engineering Principles',
+      'Database Systems',
+      'Web Application Development',
+      'Operating Systems',
+    ],
   },
 ];
 
