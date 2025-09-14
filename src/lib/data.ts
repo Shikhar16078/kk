@@ -62,7 +62,7 @@ export const education: Education[] = [
     startDate: '2016',
     endDate: '2018',
     description:
-      'Focused on machine learning and distributed systems. Published a paper on efficient data processing algorithms.',
+      'Focused on advanced topics in machine learning, including deep learning and neural networks, and explored distributed systems with a focus on scalability and fault tolerance. My thesis involved developing and publishing a novel algorithm for efficient data processing in large-scale systems.',
   },
   {
     institution: 'State University',
@@ -70,7 +70,7 @@ export const education: Education[] = [
     startDate: '2012',
     endDate: '2016',
     description:
-      'Graduated with honors. Active member of the coding club and participated in several hackathons.',
+      'Graduated with honors, acquiring a strong foundation in software development principles, data structures, and algorithms. As an active member of the coding club, I led a team that won first place in a regional hackathon by developing a mobile app for local community engagement.',
   },
 ];
 
@@ -86,6 +86,8 @@ export const projects: Project[] = [
       'Tailwind CSS',
       'Stripe',
       'PostgreSQL',
+      'Redis',
+      'Docker',
     ],
     liveDemoUrl: '#',
     githubUrl: '#',
@@ -96,7 +98,15 @@ export const projects: Project[] = [
     title: 'AI-Powered Chatbot',
     description:
       'A customer service chatbot that uses natural language processing to understand and respond to user queries in real-time.',
-    techStack: ['Python', 'Flask', 'TensorFlow', 'React', 'Docker'],
+    techStack: [
+      'Python',
+      'Flask',
+      'TensorFlow',
+      'PyTorch',
+      'React',
+      'Docker',
+      'Kubernetes',
+    ],
     liveDemoUrl: '#',
     githubUrl: '#',
     image: 'project-chatbot',
@@ -106,7 +116,14 @@ export const projects: Project[] = [
     title: 'Project Management Tool',
     description:
       'A collaborative project management tool to help teams organize tasks, track progress, and meet deadlines.',
-    techStack: ['React', 'Firebase', 'Material-UI', 'Node.js'],
+    techStack: [
+      'React',
+      'Firebase',
+      'Material-UI',
+      'Node.js',
+      'Express',
+      'MongoDB',
+    ],
     liveDemoUrl: '#',
     githubUrl: '#',
     image: 'project-management',
@@ -116,7 +133,7 @@ export const projects: Project[] = [
     title: 'Personal Portfolio Website',
     description:
       'This very portfolio website, built to showcase my skills and projects in a visually appealing way.',
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'GenAI'],
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Genkit', 'Jest'],
     liveDemoUrl: '#',
     githubUrl: '#',
     image: 'project-portfolio',
