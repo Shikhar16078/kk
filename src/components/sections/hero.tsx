@@ -49,7 +49,7 @@ export function Hero() {
           <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
             <div
               className={cn(
-                'relative h-72 w-72 overflow-hidden rounded-full border-4 border-primary/50',
+                'relative h-80 w-80 overflow-hidden rounded-full border-4 border-primary/50',
                 'animate-neon-ring'
               )}
             >
