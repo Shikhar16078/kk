@@ -25,7 +25,7 @@ export function Projects() {
             (p) => p.id === project.image
           );
           return (
-            <Card key={project.id} className="flex flex-col">
+            <Card key={project.id} className="flex flex-col h-full">
               <CardHeader>
                 {projectImage && (
                   <div className="relative mb-4 aspect-video overflow-hidden rounded-t-lg">
