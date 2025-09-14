@@ -47,19 +47,20 @@ export function Hero() {
             </div>
           </div>
           <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
-            <div
-              className={cn(
-                'relative h-80 w-80 overflow-hidden rounded-full border-4 border-primary/50',
-                'animate-neon-ring'
-              )}
-            >
+            <div className="relative h-80 w-80">
+              <div
+                className={cn(
+                  'absolute inset-0 rounded-full border-4 border-primary/50',
+                  'animate-neon-ring'
+                )}
+              />
               <Image
                 src="/profile.jpg"
                 alt="Profile Photo"
                 width={400}
                 height={400}
                 priority
-                className="object-cover"
+                className="relative h-full w-full rounded-full object-cover"
                 data-ai-hint="professional headshot"
               />
             </div>

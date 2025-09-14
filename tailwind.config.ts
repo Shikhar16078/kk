@@ -79,13 +79,19 @@ export default {
           },
         },
         'neon-ring': {
-          '0%, 100%': {
+          '0%': {
+            transform: 'rotate(0deg)',
             boxShadow:
               '0 0 5px hsl(var(--primary) / 0.8), 0 0 10px hsl(var(--primary) / 0.8), 0 0 20px hsl(var(--primary) / 0.6), 0 0 30px hsl(var(--primary) / 0.4), 0 0 40px hsl(var(--primary) / 0.2)',
           },
           '50%': {
             boxShadow:
               '0 0 10px hsl(var(--primary) / 0.8), 0 0 20px hsl(var(--primary) / 0.8), 0 0 30px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--primary) / 0.4), 0 0 50px hsl(var(--primary) / 0.2)',
+          },
+          '100%': {
+            transform: 'rotate(360deg)',
+            boxShadow:
+              '0 0 5px hsl(var(--primary) / 0.8), 0 0 10px hsl(var(--primary) / 0.8), 0 0 20px hsl(var(--primary) / 0.6), 0 0 30px hsl(var(--primary) / 0.4), 0 0 40px hsl(var(--primary) / 0.2)',
           },
         },
       },
