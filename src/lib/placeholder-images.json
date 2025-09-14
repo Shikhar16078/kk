@@ -3,7 +3,7 @@
     {
       "id": "profile-photo",
       "description": "Professional headshot of a software developer",
-      "imageUrl": "https://picsum.photos/seed/profile/400/400",
+      "imageUrl": "/profile-photo.jpeg",
       "imageHint": "professional headshot"
     },
     {

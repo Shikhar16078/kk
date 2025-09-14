@@ -54,7 +54,8 @@ export function Hero() {
                 <Image
                   src={profileImage.imageUrl}
                   alt={profileImage.description}
-                  fill
+                  width={400}
+                  height={400}
                   priority
                   className="object-cover"
                   data-ai-hint={profileImage.imageHint}
