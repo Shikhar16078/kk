@@ -117,7 +117,7 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'neon-ring': 'neon-ring 4s linear infinite',
-        'scroll-horizontal': 'scroll-horizontal 80s linear infinite',
+        'scroll-horizontal': 'scroll-horizontal 40s linear infinite',
         'breathing-neon': 'breathing-neon 3s ease-in-out infinite',
       },
     },
