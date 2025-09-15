@@ -14,11 +14,29 @@ import { BrainCircuit, Code, Database, Server, Star } from 'lucide-react';
 import { Skeleton } from '../ui/skeleton';
 
 const defaultSkills: GenerateCategorizedSkillsOutput = {
-  frontendSkills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'HTML5 & CSS3'],
+  frontendSkills: [
+    'React',
+    'Next.js',
+    'TypeScript',
+    'Tailwind CSS',
+    'HTML5 & CSS3',
+  ],
   backendSkills: ['Node.js', 'Python', 'Express', 'Flask', 'REST APIs'],
-  aiSkills: ['TensorFlow', 'PyTorch', 'scikit-learn', 'Genkit', 'LLM Integration'],
+  aiSkills: [
+    'TensorFlow',
+    'PyTorch',
+    'scikit-learn',
+    'Genkit',
+    'LLM Integration',
+  ],
   databaseSkills: ['PostgreSQL', 'MongoDB', 'Redis', 'SQL', 'NoSQL'],
-  generalSkills: ['CI/CD', 'Docker', 'Git', 'Agile Methodologies', 'Problem Solving'],
+  generalSkills: [
+    'CI/CD',
+    'Docker',
+    'Git',
+    'Agile Methodologies',
+    'Problem Solving',
+  ],
 };
 
 const categoryIcons = {
@@ -54,9 +72,7 @@ export function Skills() {
       const projectDescriptions = projects
         .map(
           (p) =>
-            `${p.title}: ${p.description} using ${p.techStack.join(
-              ', '
-            )}`
+            `${p.title}: ${p.description} using ${p.techStack.join(', ')}`
         )
         .join('\n');
 
@@ -67,7 +83,10 @@ export function Skills() {
         });
         setSkills(result);
       } catch (error) {
-        console.error('Failed to generate skills, using default skills:', error);
+        console.error(
+          'Failed to generate skills, using default skills:',
+          error
+        );
         setSkills(defaultSkills);
       } finally {
         setLoading(false);
@@ -79,13 +98,13 @@ export function Skills() {
   const renderSkills = (skillList: string[] | undefined) => {
     if (!skillList || skillList.length === 0) {
       return (
-        <p className="text-muted-foreground">
+        <p className="text-center text-muted-foreground">
           No skills listed for this category.
         </p>
       );
     }
     return (
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap justify-center gap-2">
         {skillList.map((skill) => (
           <Badge
             key={skill}
@@ -100,7 +119,7 @@ export function Skills() {
   };
 
   const renderSkeletons = () => (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap justify-center gap-2">
       {Array.from({ length: 8 }).map((_, i) => (
         <Skeleton key={i} className="h-10 w-28 rounded-full" />
       ))}
@@ -111,7 +130,7 @@ export function Skills() {
     <SectionWrapper id="skills">
       <SectionTitle>My Skills</SectionTitle>
       <Tabs defaultValue="frontendSkills" className="w-full">
-        <TabsList className="grid w-full grid-cols-2 h-auto flex-wrap justify-center border bg-card sm:grid-cols-3 md:flex md:h-10">
+        <TabsList className="grid h-auto w-full grid-cols-2 flex-wrap justify-center border bg-card sm:grid-cols-3 md:flex md:h-10">
           {Object.keys(categoryLabels).map((key) => (
             <TabsTrigger key={key} value={key} className="flex items-center">
               {categoryIcons[key as keyof typeof categoryIcons]}
