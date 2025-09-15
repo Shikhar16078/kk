@@ -24,12 +24,16 @@ export function Header() {
   }, []);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
     const targetId = e.currentTarget.getAttribute('href');
     if (targetId && targetId.startsWith('#')) {
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
+      e.preventDefault();
+      if (targetId === '#about') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     }
   };
