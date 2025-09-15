@@ -3,6 +3,7 @@ import { personalData } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { AnimatedGradient } from '../ui/animated-gradient';
 
 export function Hero() {
   return (
@@ -48,6 +49,7 @@ export function Hero() {
           </div>
           <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
             <div className="relative h-80 w-80">
+              <AnimatedGradient className="absolute inset-[-2px] blur-lg" />
               <div
                 className={cn(
                   'absolute inset-0 rounded-full border-4 border-primary/50',
