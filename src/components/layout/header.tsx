@@ -23,6 +23,39 @@ export function Header() {
     };
   }, []);
 
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const targetId = e.currentTarget.getAttribute('href');
+    if (targetId && targetId.startsWith('#')) {
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  const navLinkItems = navLinks.map((link) => (
+    <a
+      key={link.href}
+      href={link.href}
+      onClick={handleLinkClick}
+      className="font-medium text-foreground/70 transition-colors hover:text-primary"
+    >
+      {link.label}
+    </a>
+  ));
+
+  const mobileNavLinkItems = navLinks.map((link) => (
+    <a
+      key={link.href}
+      href={link.href}
+      onClick={handleLinkClick}
+      className="text-lg font-medium text-foreground/70 transition-colors hover:text-primary"
+    >
+      {link.label}
+    </a>
+  ));
+
   return (
     <header
       className={cn(
@@ -45,15 +78,7 @@ export function Header() {
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="font-medium text-foreground/70 transition-colors hover:text-primary"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinkItems}
         </nav>
 
         <div className="flex items-center gap-2">
@@ -68,15 +93,7 @@ export function Header() {
               </SheetTrigger>
               <SheetContent side="right">
                 <nav className="mt-8 flex flex-col gap-6">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="text-lg font-medium text-foreground/70 transition-colors hover:text-primary"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
+                  {mobileNavLinkItems}
                 </nav>
               </SheetContent>
             </Sheet>
