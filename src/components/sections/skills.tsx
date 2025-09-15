@@ -63,12 +63,7 @@ export function Skills() {
   const [showAll, setShowAll] = useState(false);
 
   const SkillMarquee = () => (
-    <div
-      className={cn(
-        'group relative w-full overflow-hidden',
-        !showAll && 'h-24'
-      )}
-    >
+    <div className={cn('group relative w-full overflow-hidden', !showAll && 'h-24')}>
       <AnimatePresence>
         {!showAll && (
           <motion.div
@@ -79,8 +74,9 @@ export function Skills() {
           />
         )}
       </AnimatePresence>
-      <div className="flex w-full flex-col justify-center gap-2">
-        <div className="flex animate-scroll-horizontal group-hover:[animation-play-state:paused] w-[200%] flex-nowrap gap-2">
+      <div className="flex flex-col justify-center gap-2">
+        <div className="relative w-full overflow-hidden">
+          <div className="flex w-[200%] animate-scroll-horizontal gap-2 group-hover:[animation-play-state:paused]">
             {[...skills1, ...skills1].map((skill, index) => (
               <Badge
                 key={`${skill}-${index}-1`}
@@ -90,8 +86,10 @@ export function Skills() {
                 {skill}
               </Badge>
             ))}
+          </div>
         </div>
-        <div className="flex animate-scroll-horizontal-reverse group-hover:[animation-play-state:paused] w-[200%] flex-nowrap gap-2">
+        <div className="relative w-full overflow-hidden">
+          <div className="flex w-[200%] animate-scroll-horizontal-reverse gap-2 group-hover:[animation-play-state:paused]">
             {[...skills2, ...skills2].map((skill, index) => (
               <Badge
                 key={`${skill}-${index}-2`}
@@ -101,25 +99,25 @@ export function Skills() {
                 {skill}
               </Badge>
             ))}
+          </div>
         </div>
       </div>
     </div>
   );
 
   const AllSkillsGrid = () => (
-     <div className="flex flex-wrap justify-center gap-2">
-        {allSkills.map((skill, index) => (
-          <Badge
-            key={`${skill}-${index}`}
-            variant="secondary"
-            className="cursor-pointer select-none whitespace-nowrap border-primary/20 bg-primary/10 px-4 py-2 text-base text-primary shadow-sm transition-all hover:bg-primary/20 hover:shadow-md"
-          >
-            {skill}
-          </Badge>
-        ))}
-      </div>
+    <div className="flex flex-wrap justify-center gap-2">
+      {allSkills.map((skill, index) => (
+        <Badge
+          key={`${skill}-${index}`}
+          variant="secondary"
+          className="cursor-pointer select-none whitespace-nowrap border-primary/20 bg-primary/10 px-4 py-2 text-base text-primary shadow-sm transition-all hover:bg-primary/20 hover:shadow-md"
+        >
+          {skill}
+        </Badge>
+      ))}
+    </div>
   );
-
 
   return (
     <SectionWrapper id="skills">
