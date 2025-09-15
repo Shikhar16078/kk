@@ -16,14 +16,14 @@ export const personalData: PersonalData = {
     email: 'kshittiz.k@gmail.com',
     social: [
       {
-        name: 'GitHub',
-        url: 'https://github.com/kshittiz',
-        icon: Github,
-      },
-      {
         name: 'LinkedIn',
         url: 'https://www.linkedin.com/in/kshittiz-kumar',
         icon: Linkedin,
+      },
+      {
+        name: 'GitHub',
+        url: 'https://github.com/kshittiz',
+        icon: Github,
       },
       {
         name: 'YouTube',
