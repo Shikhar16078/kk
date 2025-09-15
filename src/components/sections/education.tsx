@@ -29,7 +29,7 @@ export function Education() {
         {education.map((edu, index) => (
           <Accordion key={index} type="single" collapsible className="w-full">
             <AccordionItem value={`item-${index}`} asChild>
-              <Card className="flex h-full flex-col">
+              <Card className="flex flex-col">
                 <CardHeader>
                   <div className="flex items-center gap-4">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 p-1">
