@@ -29,6 +29,7 @@ const formSchema = z.object({
 
 export function Contact() {
   const { toast } = useToast();
+  const recipientEmail = 'shikharkumar78@gmail.com';
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -40,10 +41,17 @@ export function Contact() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+    const subject = encodeURIComponent(`New message from ${values.name}`);
+    const body = encodeURIComponent(
+      `${values.message}\n\nFrom: ${values.name}\nEmail: ${values.email}`
+    );
+    const mailtoLink = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
+
+    window.location.href = mailtoLink;
+
     toast({
-      title: 'Message Sent!',
-      description: "Thanks for reaching out. I'll get back to you soon.",
+      title: 'Message Ready to Send!',
+      description: 'Your email client should now be open.',
     });
     form.reset();
   }
@@ -60,12 +68,12 @@ export function Contact() {
           </p>
           <div className="mt-8 space-y-4">
             <a
-              href={`mailto:${personalData.contact.email}`}
+              href={`mailto:${recipientEmail}`}
               className="group flex items-center gap-3"
             >
               <Mail className="h-5 w-5 text-primary" />
               <span className="text-lg text-muted-foreground transition-colors group-hover:text-primary">
-                {personalData.contact.email}
+                {recipientEmail}
               </span>
             </a>
             <div className="flex items-center gap-4 pt-4">
