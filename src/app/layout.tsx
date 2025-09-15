@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Kshittiz',
   description: 'A modern portfolio for a top-notch software developer.',
   icons: {
-    icon: '/profile.jpg',
+    icon: '/profile.jpg?v=2',
   },
 };
 
