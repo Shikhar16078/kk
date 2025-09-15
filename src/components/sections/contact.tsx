@@ -14,7 +14,7 @@ export function Contact() {
       <SectionTitle>Get in Touch</SectionTitle>
       <div className="mx-auto max-w-lg text-center">
         <p className="mt-4 text-lg text-muted-foreground">
-          Have an interesting idea to share or just want to say hi?
+          Have an interesting idea or just want to say hi?
         </p>
         <div className="mt-8 flex flex-col items-center gap-6">
           <Button asChild size="lg">

@@ -14,10 +14,10 @@ export function Footer() {
             height={24}
             className="rounded-full"
           />
-          <span className="font-headline text-lg font-bold">Kshittiz</span>
+          <span className="font-headline text-lg font-bold">Kshittiz Kumar</span>
         </Link>
         <p className="text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} {personalData.name}. All rights
+          &copy;{new Date().getFullYear()} {personalData.name}. All rights
           reserved.
         </p>
         <div className="flex items-center gap-4">

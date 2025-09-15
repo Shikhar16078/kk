@@ -38,7 +38,7 @@ export function Education() {
             value={`item-${index}`}
             className="border-none"
           >
-            <Card className="flex h-full flex-col min-h-[420px]">
+            <Card className="flex h-full flex-col min-h-[300px]">
               <CardHeader>
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 p-1">
