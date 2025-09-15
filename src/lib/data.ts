@@ -10,7 +10,7 @@ import type {
 export const personalData: PersonalData = {
   name: 'Kshittiz Kumar',
   title: 'Senior Software Engineer at Microsoft | FactSet | PayPal',
-  bio: 'Calm, Artistic and Ambitious :)',
+  bio: 'A seasoned software engineer with a passion for building scalable and efficient solutions. Experienced in cloud technologies, distributed systems, and backend development, with a proven track record of delivering high-quality software at top tech companies.',
   image: 'profile-photo',
   contact: {
     email: 'kshittiz.k@gmail.com',
@@ -167,7 +167,7 @@ export const projects: Project[] = [
       'Successfully analyzed 50 android apk files for privacy leaks using Flowdroid taint analysis tool. Created scripts using Java for automating analysis and to deduce relations between various privacy violations.',
     techStack: ['Java', 'Flowdroid', 'Static Analysis', 'Android Security'],
     liveDemoUrl: '#',
-githuUrl: '#',
+    githubUrl: '#',
     image: 'project-4',
   },
   {
