@@ -11,9 +11,8 @@ export function Contact() {
 
   return (
     <SectionWrapper id="contact" className="bg-card">
-      <SectionTitle>Contact Me</SectionTitle>
+      <SectionTitle>Get in Touch</SectionTitle>
       <div className="mx-auto max-w-lg text-center">
-        <h3 className="font-headline text-2xl font-semibold">Get in Touch</h3>
         <p className="mt-4 text-lg text-muted-foreground">
           Have a project in mind or just want to say hi? I&apos;d love to hear
           from you.

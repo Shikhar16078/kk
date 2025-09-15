@@ -12,7 +12,6 @@ export function Hero() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div className="order-2 lg:order-1">
             <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-              Hi, I&apos;m{' '}
               <span className="text-primary">{personalData.name}</span>
             </h1>
             <h2 className="mt-2 font-headline text-2xl font-medium text-foreground/80 sm:text-3xl">

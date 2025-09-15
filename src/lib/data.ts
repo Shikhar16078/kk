@@ -10,7 +10,7 @@ import type {
 export const personalData: PersonalData = {
   name: 'Kshittiz Kumar',
   title: 'Senior Software Engineer at Microsoft',
-  bio: 'Calm, Artistic and Ambitious :)',
+  bio: 'Senior Software Engineer with extensive experience in cloud technologies, distributed systems, and full-stack development. Passionate about building robust and scalable software solutions.',
   image: 'profile-photo',
   contact: {
     email: 'your.email@example.com',
