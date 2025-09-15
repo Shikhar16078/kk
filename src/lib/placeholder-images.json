@@ -5,30 +5,6 @@
       "description": "Professional headshot of a software developer",
       "imageUrl": "/profile.jpg",
       "imageHint": "professional headshot"
-    },
-    {
-      "id": "project-ecommerce",
-      "description": "Screenshot of an e-commerce website interface",
-      "imageUrl": "https://picsum.photos/seed/ecommerce/600/400",
-      "imageHint": "website interface"
-    },
-    {
-      "id": "project-chatbot",
-      "description": "Illustration of an AI chatbot conversation",
-      "imageUrl": "https://picsum.photos/seed/chatbot/600/400",
-      "imageHint": "chatbot illustration"
-    },
-    {
-      "id": "project-management",
-      "description": "Dashboard of a project management tool",
-      "imageUrl": "https://picsum.photos/seed/pmtool/600/400",
-      "imageHint": "dashboard interface"
-    },
-    {
-      "id": "project-portfolio",
-      "description": "A stylish portfolio website design",
-      "imageUrl": "https://picsum.photos/seed/portfolio/600/400",
-      "imageHint": "portfolio website"
     }
   ]
 }
