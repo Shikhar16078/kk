@@ -3,26 +3,10 @@
 import { useState } from 'react';
 import { SectionWrapper, SectionTitle } from '../layout/section-wrapper';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '../ui/button';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
-
-type SkillCategory =
-  | 'frontendSkills'
-  | 'backendSkills'
-  | 'aiSkills'
-  | 'databaseSkills'
-  | 'generalSkills';
-
-const categoryTitles: Record<SkillCategory, string> = {
-  frontendSkills: 'Frontend',
-  backendSkills: 'Backend',
-  aiSkills: 'AI/ML',
-  databaseSkills: 'Databases',
-  generalSkills: 'General',
-};
 
 const staticSkills = {
   frontendSkills: [
@@ -82,7 +66,7 @@ export function Skills() {
       <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-4">
         <div
           className={cn(
-            'relative w-full overflow-hidden',
+            'group relative w-full overflow-hidden',
             !showAll && 'h-24'
           )}
         >
@@ -98,11 +82,11 @@ export function Skills() {
           </AnimatePresence>
           <div
             className={cn(
-              'flex flex-wrap justify-center gap-2 transition-all duration-500',
-              !showAll &&
-                'absolute top-0 left-0 w-[200%] animate-scroll-horizontal justify-start will-change-transform'
+              'flex flex-wrap gap-2 transition-all duration-500',
+              !showAll
+                ? 'absolute top-0 left-0 w-[200%] animate-scroll-horizontal justify-start will-change-transform group-hover:[animation-play-state:paused]'
+                : 'justify-center'
             )}
-            style={{ animationPlayState: showAll ? 'paused' : 'running' }}
           >
             {[...allSkills, ...allSkills].map((skill, index) => (
               <Badge

@@ -82,6 +82,10 @@
     animation: breathing-neon 3s ease-in-out infinite;
   }
 
+  .animate-scroll-horizontal {
+    animation: scroll-horizontal 120s linear infinite;
+  }
+
   @keyframes breathing-neon {
     0%,
     100% {
@@ -125,6 +129,15 @@
     }
     100% {
       background-position: 0% 50%;
+    }
+  }
+
+  @keyframes scroll-horizontal {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
     }
   }
 }
