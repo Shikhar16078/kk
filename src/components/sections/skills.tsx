@@ -13,6 +13,14 @@ import { Card, CardContent } from '../ui/card';
 import { BrainCircuit, Code, Database, Server, Star } from 'lucide-react';
 import { Skeleton } from '../ui/skeleton';
 
+const defaultSkills: GenerateCategorizedSkillsOutput = {
+  frontendSkills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'HTML5 & CSS3'],
+  backendSkills: ['Node.js', 'Python', 'Express', 'Flask', 'REST APIs'],
+  aiSkills: ['TensorFlow', 'PyTorch', 'scikit-learn', 'Genkit', 'LLM Integration'],
+  databaseSkills: ['PostgreSQL', 'MongoDB', 'Redis', 'SQL', 'NoSQL'],
+  generalSkills: ['CI/CD', 'Docker', 'Git', 'Agile Methodologies', 'Problem Solving'],
+};
+
 const categoryIcons = {
   frontendSkills: <Code className="mr-2 h-5 w-5 text-primary" />,
   backendSkills: <Server className="mr-2 h-5 w-5 text-primary" />,
@@ -59,7 +67,8 @@ export function Skills() {
         });
         setSkills(result);
       } catch (error) {
-        console.error('Failed to generate skills:', error);
+        console.error('Failed to generate skills, using default skills:', error);
+        setSkills(defaultSkills);
       } finally {
         setLoading(false);
       }
@@ -102,7 +111,7 @@ export function Skills() {
     <SectionWrapper id="skills">
       <SectionTitle>My Skills</SectionTitle>
       <Tabs defaultValue="frontendSkills" className="w-full">
-        <TabsList className="grid w-full grid-cols-2 border bg-card sm:grid-cols-3 md:grid-cols-5">
+        <TabsList className="grid w-full grid-cols-2 h-auto flex-wrap justify-center border bg-card sm:grid-cols-3 md:flex md:h-10">
           {Object.keys(categoryLabels).map((key) => (
             <TabsTrigger key={key} value={key} className="flex items-center">
               {categoryIcons[key as keyof typeof categoryIcons]}
