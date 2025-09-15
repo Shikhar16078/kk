@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { AnimatedGradient } from '../ui/animated-gradient';
+import { Briefcase } from 'lucide-react';
 
 export function Hero() {
   return (
@@ -14,9 +15,15 @@ export function Hero() {
             <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
               <span className="text-primary">{personalData.name}</span>
             </h1>
-            <h2 className="mt-2 font-headline text-2xl font-medium text-foreground/80 sm:text-3xl">
-              {personalData.title}
-            </h2>
+            <div className="mt-2">
+              <h2 className="flex items-center gap-2 font-headline text-2xl font-medium text-foreground/80 sm:text-3xl">
+                <Briefcase className="h-6 w-6" />
+                Senior Software Engineer
+              </h2>
+              <p className="font-headline text-xl text-foreground/70">
+                Microsoft | PayPal | FactSet
+              </p>
+            </div>
             <p className="mt-6 max-w-xl text-lg text-foreground/70">
               {personalData.bio}
             </p>
