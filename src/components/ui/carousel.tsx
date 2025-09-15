@@ -28,6 +28,9 @@ type CarouselContextProps = {
   scrollNext: () => void
   canScrollPrev: boolean
   canScrollNext: boolean
+  selectedIndex: number
+  scrollSnaps: number[]
+  scrollTo: (index: number) => void
 } & CarouselProps
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null)
@@ -67,15 +70,21 @@ const Carousel = React.forwardRef<
     )
     const [canScrollPrev, setCanScrollPrev] = React.useState(false)
     const [canScrollNext, setCanScrollNext] = React.useState(false)
+    const [selectedIndex, setSelectedIndex] = React.useState(0)
+    const [scrollSnaps, setScrollSnaps] = React.useState<number[]>([])
 
     const onSelect = React.useCallback((api: CarouselApi) => {
       if (!api) {
         return
       }
-
+      setSelectedIndex(api.selectedScrollSnap())
       setCanScrollPrev(api.canScrollPrev())
       setCanScrollNext(api.canScrollNext())
     }, [])
+    
+    const scrollTo = React.useCallback((index: number) => {
+      api?.scrollTo(index)
+    }, [api]);
 
     const scrollPrev = React.useCallback(() => {
       api?.scrollPrev()
@@ -104,7 +113,9 @@ const Carousel = React.forwardRef<
       }
 
       onSelect(api)
+      setScrollSnaps(api.scrollSnapList());
       api.on("reInit", onSelect)
+      api.on("reInit", (api) => setScrollSnaps(api.scrollSnapList()));
       api.on("select", onSelect)
 
       return () => {
@@ -132,6 +143,9 @@ const Carousel = React.forwardRef<
           scrollNext,
           canScrollPrev,
           canScrollNext,
+          selectedIndex,
+          scrollSnaps,
+          scrollTo,
         }}
       >
         <div
@@ -240,6 +254,38 @@ const CarouselNext = React.forwardRef<
 })
 CarouselNext.displayName = "CarouselNext"
 
+
+const CarouselPagination = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => {
+  const { selectedIndex, scrollSnaps, scrollTo } = useCarousel();
+
+  return (
+    <div
+      ref={ref}
+      className={cn("flex justify-center gap-2", className)}
+      {...props}
+    >
+      {scrollSnaps.map((_, index) => (
+        <Button
+          key={index}
+          variant="outline"
+          size="icon"
+          className={cn(
+            'h-2 w-2 rounded-full p-0',
+            index === selectedIndex ? 'bg-primary' : 'bg-primary/20'
+          )}
+          onClick={() => scrollTo(index)}
+        >
+          <span className="sr-only">Go to slide {index + 1}</span>
+        </Button>
+      ))}
+    </div>
+  );
+});
+CarouselPagination.displayName = 'CarouselPagination';
+
 export {
   type CarouselApi,
   Carousel,
@@ -247,4 +293,5 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
+  CarouselPagination
 }

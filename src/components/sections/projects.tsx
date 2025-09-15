@@ -20,6 +20,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  CarouselPagination,
 } from '@/components/ui/carousel';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -118,8 +119,9 @@ export function Projects() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="mt-8 flex justify-center gap-4">
+            <div className="mt-8 flex justify-center items-center gap-4">
               <CarouselPrevious />
+              <CarouselPagination />
               <CarouselNext />
             </div>
           </Carousel>
