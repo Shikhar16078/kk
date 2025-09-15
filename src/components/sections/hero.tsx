@@ -46,7 +46,7 @@ export function Hero() {
                     asChild
                     variant="ghost"
                     size="icon"
-                    className="h-16 w-16"
+                    className="h-12 w-12"
                   >
                     <a
                       href={social.url}
@@ -54,7 +54,7 @@ export function Hero() {
                       rel="noopener noreferrer"
                       aria-label={social.name}
                     >
-                      <social.icon className="h-10 w-10 text-foreground/70 transition-colors hover:text-primary" />
+                      <social.icon className="h-7 w-7 text-foreground/70 transition-colors hover:text-primary" />
                     </a>
                   </Button>
                 ))}
