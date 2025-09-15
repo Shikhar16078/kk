@@ -1,156 +1,148 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { SectionWrapper, SectionTitle } from '../layout/section-wrapper';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import {
+  generateCategorizedSkills,
+  GenerateCategorizedSkillsOutput,
+} from '@/ai/flows/generate-categorized-skills';
+import { workExperience, projects } from '@/lib/data';
+import { Skeleton } from '@/components/ui/skeleton';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-const allSkills = [
-  'HTML',
-  'Cascading Style Sheets (CSS)',
-  'Bootstrap',
-  'User Interface Design',
-  'Software Design',
-  'Software Infrastructure',
-  'Core Java',
-  'Java Enterprise Edition',
-  'Jee',
-  'Enterprise JavaBeans (EJB)',
-  'JPA',
-  'Microservices',
-  'Distributed Systems',
-  'Representational State Transfer (REST)',
-  'Back-End Web Development',
-  'Object Oriented Design',
-  'Object-Oriented Programming (OOP)',
-  'Java',
-  'Python (Programming Language)',
-  'Go (Programming Language)',
-  'C (Programming Language)',
-  'Powershell',
-  'C#',
-  'Spring Boot',
-  'Spring MVC',
-  'Distributed tracing',
-  'SQL',
-  'MySQL',
-  'Snowflake',
-  'Database Management System (DBMS)',
-  'Azure Cosmos DB',
-  'Database Design',
-  'BCDR',
-  'Git',
-  'Linux',
-  'Microsoft Office',
-  'Software Development',
-  'Programming',
-  'Windows',
-  'algorithms',
-  'Ruby',
-  'JUnit',
-  'TestNG',
-  'Agile Methodologies',
-  'Cryptography',
-  'Jenkins',
-  'docker',
-  'Cloud Computing',
-  'Microsoft Azure',
-];
+type SkillCategory =
+  | 'frontendSkills'
+  | 'backendSkills'
+  | 'aiSkills'
+  | 'databaseSkills'
+  | 'generalSkills';
 
-const half = Math.ceil(allSkills.length / 2);
-const skills1 = allSkills.slice(0, half);
-const skills2 = allSkills.slice(half);
-
-const duplicatedSkills1 = [...skills1, ...skills1];
-const duplicatedSkills2 = [...skills2, ...skills2];
+const categoryTitles: Record<SkillCategory, string> = {
+  frontendSkills: 'Frontend',
+  backendSkills: 'Backend',
+  aiSkills: 'AI/ML',
+  databaseSkills: 'Databases',
+  generalSkills: 'General',
+};
 
 export function Skills() {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [skills, setSkills] =
+    useState<GenerateCategorizedSkillsOutput | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchSkills = async () => {
+      setIsLoading(true);
+      try {
+        const experienceDescription = workExperience
+          .map((job) => job.accomplishments.join(' '))
+          .join(' ');
+        const projectDescriptions = projects
+          .map((project) => project.description)
+          .join(' ');
+
+        const result = await generateCategorizedSkills({
+          experienceDescription,
+          projectDescriptions,
+        });
+        setSkills(result);
+      } catch (error) {
+        console.error('Error generating skills:', error);
+        setSkills({
+          frontendSkills: [
+            'React',
+            'Next.js',
+            'TypeScript',
+            'Tailwind CSS',
+            'HTML5 & CSS3',
+          ],
+          backendSkills: [
+            'Node.js',
+            'Python',
+            'Express',
+            'Flask',
+            'REST APIs',
+          ],
+          aiSkills: [
+            'TensorFlow',
+            'PyTorch',
+            'scikit-learn',
+            'Genkit',
+            'LLM Integration',
+          ],
+          databaseSkills: [
+            'PostgreSQL',
+            'MongoDB',
+            'Redis',
+            'SQL',
+            'NoSQL',
+          ],
+          generalSkills: [
+            'CI/CD',
+            'Docker',
+            'Git',
+            'Agile Methodologies',
+            'Problem Solving',
+          ],
+        });
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchSkills();
+  }, []);
 
   return (
     <SectionWrapper id="skills">
-      <div className="flex items-center justify-center">
-        <SectionTitle>Skills</SectionTitle>
-      </div>
-      <div className="relative w-full overflow-hidden">
-        {/* Scrolling Marquee View */}
-        <div
-          className={cn(
-            'transition-opacity duration-500',
-            isExpanded ? 'opacity-0 h-0' : 'opacity-100'
-          )}
-          aria-hidden={isExpanded}
-        >
-          <div className="flex flex-col gap-2">
-            <div className="group relative w-full overflow-hidden">
-              <div className="flex w-max animate-scroll-horizontal group-hover:[animation-play-state:paused]">
-                {duplicatedSkills1.map((skill, index) => (
-                  <Badge
-                    key={`${skill}-${index}`}
-                    variant="secondary"
-                    className="mx-2 whitespace-nowrap border-primary/20 bg-primary/10 px-4 py-2 text-md text-primary hover:bg-primary/20"
-                  >
-                    {skill}
-                  </Badge>
+      <SectionTitle>Skills</SectionTitle>
+      {isLoading ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {Array.from({ length: 5 }).map((_, index) => (
+            <Card key={index}>
+              <CardHeader>
+                <Skeleton className="h-6 w-1/2" />
+              </CardHeader>
+              <CardContent className="flex flex-wrap gap-2">
+                {Array.from({ length: 5 }).map((_, skillIndex) => (
+                  <Skeleton key={skillIndex} className="h-8 w-24" />
                 ))}
-              </div>
-            </div>
-            <div className="group relative w-full overflow-hidden">
-              <div
-                className="flex w-max animate-scroll-horizontal group-hover:[animation-play-state:paused]"
-                style={{ animationDirection: 'reverse' }}
-              >
-                {duplicatedSkills2.map((skill, index) => (
-                  <Badge
-                    key={`${skill}-${index}`}
-                    variant="secondary"
-                    className="mx-2 whitespace-nowrap border-primary/20 bg-primary/10 px-4 py-2 text-md text-primary hover:bg-primary/20"
-                  >
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-          </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
-
-        {/* Expanded Grid View */}
-        {isExpanded && (
-          <div
-            className={cn(
-              'flex flex-wrap justify-center gap-2 transition-opacity duration-500',
-              isExpanded ? 'opacity-100' : 'opacity-0'
-            )}
-          >
-            {allSkills.map((skill) => (
-              <Badge
-                key={skill}
-                variant="secondary"
-                className="whitespace-nowrap border-primary/20 bg-primary/10 px-4 py-2 text-md text-primary hover:bg-primary/20"
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {skills &&
+            (
+              Object.keys(skills) as Array<keyof typeof skills>
+            ).map((category) => (
+              <Card
+                key={category}
+                className="flex flex-col transition-transform duration-300 ease-in-out hover:-translate-y-1"
               >
-                {skill}
-              </Badge>
+                <CardHeader>
+                  <CardTitle className="font-headline text-xl">
+                    {categoryTitles[category as SkillCategory]}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-wrap gap-2">
+                  {skills[category].map((skill: string) => (
+                    <Badge
+                      key={skill}
+                      variant="secondary"
+                      className="whitespace-nowrap border-primary/20 bg-primary/10 px-3 py-1 text-sm text-primary hover:bg-primary/20"
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
+                </CardContent>
+              </Card>
             ))}
-          </div>
-        )}
-      </div>
-
-      <div className="mt-8 flex justify-center">
-        <Button
-          variant="ghost"
-          onClick={() => setIsExpanded(!isExpanded)}
-          className="group"
-        >
-          {isExpanded ? 'Show Less' : 'Show All'}
-          {isExpanded ? (
-            <ChevronUp className="ml-2 h-4 w-4 transition-transform group-hover:-translate-y-1" />
-          ) : (
-            <ChevronDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
-          )}
-        </Button>
-      </div>
+        </div>
+      )}
     </SectionWrapper>
   );
 }
