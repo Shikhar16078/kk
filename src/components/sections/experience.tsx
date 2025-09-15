@@ -12,8 +12,8 @@ import Image from 'next/image';
 
 const companyLogos: { [key: string]: string } = {
   Microsoft: '/images/microsoft_logo.png',
-  FactSet: '/images/factset_logo.png',
-  PayPal: '/images/paypal_logo.png',
+  FactSet: '/images/factset_logo.jpeg',
+  PayPal: '/images/paypal_logo.jpeg',
   Aricent: '/images/aricent_logo.png',
 };
 
