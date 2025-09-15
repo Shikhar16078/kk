@@ -62,15 +62,15 @@ export function Hero() {
           </div>
           <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
             <div className="relative h-80 w-80">
-              <div className="absolute inset-0 rounded-full border-4 border-primary/20"></div>
-              <div className="absolute inset-2 animate-neon-ring rounded-full border-4 border-primary/40"></div>
+              <div className="absolute inset-0 rounded-full border-4 border-primary/30"></div>
+              <div className="absolute inset-4 animate-neon-ring rounded-full border-4 border-primary/50"></div>
               <Image
                 src="/profile.jpg"
                 alt="Profile Photo"
                 width={400}
                 height={400}
                 priority
-                className="relative h-full w-full rounded-full object-cover shadow-2xl shadow-primary/30"
+                className="relative h-full w-full rounded-full object-cover shadow-lg"
                 data-ai-hint="professional headshot"
               />
             </div>
