@@ -56,6 +56,7 @@ export function Hero() {
                   'animate-neon-ring'
                 )}
               />
+              <div className="absolute inset-[-6px] rounded-full animate-line-spin [background:conic-gradient(from_90deg_at_50%_50%,rgba(255,255,255,0.4)_0%,transparent_50%,transparent_100%)]" />
               <Image
                 src="/profile.jpg"
                 alt="Profile Photo"
