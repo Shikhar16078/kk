@@ -76,29 +76,33 @@ export function Skills() {
       </AnimatePresence>
       <div className="flex flex-col justify-center gap-2">
         <div className="relative w-full overflow-hidden">
-          <div className="flex w-[200%] animate-scroll-horizontal gap-2 group-hover:[animation-play-state:paused]">
-            {[...skills1, ...skills1].map((skill, index) => (
-              <Badge
-                key={`${skill}-${index}-1`}
-                variant="secondary"
-                className="cursor-pointer select-none whitespace-nowrap border-primary/20 bg-primary/10 px-4 py-2 text-base text-primary shadow-sm transition-all hover:bg-primary/20 hover:shadow-md"
-              >
-                {skill}
-              </Badge>
-            ))}
+          <div className="animate-scroll-horizontal group-hover:[animation-play-state:paused]">
+            <div className="flex w-[200%] gap-2">
+              {[...skills1, ...skills1].map((skill, index) => (
+                <Badge
+                  key={`${skill}-${index}-1`}
+                  variant="secondary"
+                  className="cursor-pointer select-none whitespace-nowrap border-primary/20 bg-primary/10 px-4 py-2 text-base text-primary shadow-sm transition-all hover:bg-primary/20 hover:shadow-md"
+                >
+                  {skill}
+                </Badge>
+              ))}
+            </div>
           </div>
         </div>
         <div className="relative w-full overflow-hidden">
-          <div className="flex w-[200%] animate-scroll-horizontal-reverse gap-2 group-hover:[animation-play-state:paused]">
-            {[...skills2, ...skills2].map((skill, index) => (
-              <Badge
-                key={`${skill}-${index}-2`}
-                variant="secondary"
-                className="cursor-pointer select-none whitespace-nowrap border-primary/20 bg-primary/10 px-4 py-2 text-base text-primary shadow-sm transition-all hover:bg-primary/20 hover:shadow-md"
-              >
-                {skill}
-              </Badge>
-            ))}
+          <div className="animate-scroll-horizontal-reverse group-hover:[animation-play-state:paused]">
+            <div className="flex w-[200%] gap-2">
+              {[...skills2, ...skills2].map((skill, index) => (
+                <Badge
+                  key={`${skill}-${index}-2`}
+                  variant="secondary"
+                  className="cursor-pointer select-none whitespace-nowrap border-primary/20 bg-primary/10 px-4 py-2 text-base text-primary shadow-sm transition-all hover:bg-primary/20 hover:shadow-md"
+                >
+                  {skill}
+                </Badge>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -131,11 +131,11 @@
   .animate-scroll-horizontal {
     animation: scroll-horizontal 20s linear infinite;
   }
-
+  
   .animate-scroll-horizontal-reverse {
     animation: scroll-horizontal-reverse 20s linear infinite;
   }
-  
+
   @keyframes scroll-horizontal {
     from {
       transform: translateX(0);
