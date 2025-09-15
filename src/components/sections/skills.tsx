@@ -80,7 +80,7 @@ export function Skills() {
         )}
       </AnimatePresence>
       <div className="flex w-full flex-col justify-center gap-2">
-        <div className="flex w-[200%] animate-scroll-horizontal group-hover:[animation-play-state:paused] flex-nowrap gap-2">
+        <div className="flex animate-scroll-horizontal group-hover:[animation-play-state:paused] w-[200%] flex-nowrap gap-2">
             {[...skills1, ...skills1].map((skill, index) => (
               <Badge
                 key={`${skill}-${index}-1`}
@@ -91,7 +91,7 @@ export function Skills() {
               </Badge>
             ))}
         </div>
-        <div className="flex w-[200%] animate-scroll-horizontal-reverse group-hover:[animation-play-state:paused] flex-nowrap gap-2">
+        <div className="flex animate-scroll-horizontal-reverse group-hover:[animation-play-state:paused] w-[200%] flex-nowrap gap-2">
             {[...skills2, ...skills2].map((skill, index) => (
               <Badge
                 key={`${skill}-${index}-2`}
