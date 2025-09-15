@@ -50,7 +50,12 @@ Experience Description: {{{experienceDescription}}}
 
 Project Descriptions: {{{projectDescriptions}}}
 
-Ensure the skills are categorized into frontend, backend, AI, databases, and general skills. If any category has no skills based on the context, provide a few relevant example skills for a senior software developer for that category. Do not include any introductory or concluding remarks. Return only JSON.`,
+Ensure the skills are categorized into frontend, backend, AI, databases, and general skills. If any category has no skills based on the context, provide a few relevant example skills for a senior software developer for that category. Do not include any introductory or concluding remarks. Return only JSON.
+
+Example for an empty category:
+- "databaseSkills": ["PostgreSQL", "MongoDB", "Redis", "SQL", "NoSQL"]
+- "generalSkills": ["CI/CD", "Docker", "Git", "Agile Methodologies", "Problem Solving"]
+`,
 });
 
 const generateCategorizedSkillsFlow = ai.defineFlow(
