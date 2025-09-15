@@ -9,8 +9,8 @@ import type {
 
 export const personalData: PersonalData = {
   name: 'Kshittiz Kumar',
-  title: 'Senior Software Engineer at Microsoft',
-  bio: 'Senior Software Engineer with extensive experience in cloud technologies, distributed systems, and full-stack development. Passionate about building robust and scalable software solutions.',
+  title: 'Senior Software Engineer at Microsoft | FactSet | PayPal',
+  bio: 'Calm, Artistic and Ambitious :)',
   image: 'profile-photo',
   contact: {
     email: 'kshittiz.k@gmail.com',
@@ -38,15 +38,8 @@ export const workExperience: WorkExperience[] = [
   {
     company: 'Microsoft',
     role: 'Senior Software Engineer',
-    startDate: 'Sep 2025',
-    endDate: 'Present',
-    accomplishments: [],
-  },
-  {
-    company: 'Microsoft',
-    role: 'Software Engineer II',
     startDate: 'Jan 2022',
-    endDate: 'Sep 2025',
+    endDate: 'Present',
     accomplishments: [
       'Azure Cosmos Database Back-up & Restore.',
       'I design and implement backup and restore solutions for partitioned collections and databases in Azure Cosmos DB, focusing on complex restore scenarios, resiliency, and high availability. My work involves architecting solutions that ensure data consistency and quick recovery, leveraging both periodic and continuous backup modes to meet business continuity requirements.',
@@ -174,7 +167,7 @@ export const projects: Project[] = [
       'Successfully analyzed 50 android apk files for privacy leaks using Flowdroid taint analysis tool. Created scripts using Java for automating analysis and to deduce relations between various privacy violations.',
     techStack: ['Java', 'Flowdroid', 'Static Analysis', 'Android Security'],
     liveDemoUrl: '#',
-    githubUrl: '#',
+githuUrl: '#',
     image: 'project-4',
   },
   {
