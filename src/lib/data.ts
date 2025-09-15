@@ -112,7 +112,7 @@ export const education: Education[] = [
   },
   {
     institution: 'Guru Gobind Singh Indraprastha University',
-    degree: 'Bachelor of Technology in Computer Science & Engineering',
+    degree: 'B.Tech in Computer Science & Engineering',
     startDate: '2011',
     endDate: '2015',
     gpa: 'GPA: 8/10',
