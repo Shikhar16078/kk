@@ -74,65 +74,69 @@ export function Skills() {
       <div className="flex items-center justify-center">
         <SectionTitle>Skills</SectionTitle>
       </div>
-      <div
-        className={cn(
-          'relative w-full overflow-hidden transition-all duration-500 ease-in-out',
-          isExpanded ? 'h-auto' : 'h-[7.5rem]'
+      <div className="relative w-full overflow-hidden">
+        {/* Scrolling Marquee View */}
+        <div
+          className={cn(
+            'transition-opacity duration-500',
+            isExpanded ? 'opacity-0 h-0' : 'opacity-100'
+          )}
+          aria-hidden={isExpanded}
+        >
+          <div className="flex flex-col gap-2">
+            <div className="group relative w-full overflow-hidden">
+              <div className="flex w-max animate-scroll-horizontal group-hover:[animation-play-state:paused]">
+                {duplicatedSkills1.map((skill, index) => (
+                  <Badge
+                    key={`${skill}-${index}`}
+                    variant="secondary"
+                    className="mx-2 whitespace-nowrap border-primary/20 bg-primary/10 px-4 py-2 text-md text-primary hover:bg-primary/20"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+            <div className="group relative w-full overflow-hidden">
+              <div
+                className="flex w-max animate-scroll-horizontal group-hover:[animation-play-state:paused]"
+                style={{ animationDirection: 'reverse' }}
+              >
+                {duplicatedSkills2.map((skill, index) => (
+                  <Badge
+                    key={`${skill}-${index}`}
+                    variant="secondary"
+                    className="mx-2 whitespace-nowrap border-primary/20 bg-primary/10 px-4 py-2 text-md text-primary hover:bg-primary/20"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Expanded Grid View */}
+        {isExpanded && (
+          <div
+            className={cn(
+              'flex flex-wrap justify-center gap-2 transition-opacity duration-500',
+              isExpanded ? 'opacity-100' : 'opacity-0'
+            )}
+          >
+            {allSkills.map((skill) => (
+              <Badge
+                key={skill}
+                variant="secondary"
+                className="whitespace-nowrap border-primary/20 bg-primary/10 px-4 py-2 text-md text-primary hover:bg-primary/20"
+              >
+                {skill}
+              </Badge>
+            ))}
+          </div>
         )}
-      >
-        <div
-          className={cn(
-            'flex flex-col gap-2 transition-opacity duration-500',
-            isExpanded ? 'opacity-0' : 'opacity-100'
-          )}
-        >
-          <div className="group relative w-full overflow-hidden">
-            <div className="flex w-max animate-scroll-horizontal group-hover:[animation-play-state:paused]">
-              {duplicatedSkills1.map((skill, index) => (
-                <Badge
-                  key={`${skill}-${index}`}
-                  variant="secondary"
-                  className="mx-2 whitespace-nowrap border-primary/20 bg-primary/10 px-4 py-2 text-md text-primary hover:bg-primary/20"
-                >
-                  {skill}
-                </Badge>
-              ))}
-            </div>
-          </div>
-          <div className="group relative w-full overflow-hidden">
-            <div
-              className="flex w-max animate-scroll-horizontal group-hover:[animation-play-state:paused]"
-              style={{ animationDirection: 'reverse' }}
-            >
-              {duplicatedSkills2.map((skill, index) => (
-                <Badge
-                  key={`${skill}-${index}`}
-                  variant="secondary"
-                  className="mx-2 whitespace-nowrap border-primary/20 bg-primary/10 px-4 py-2 text-md text-primary hover:bg-primary/20"
-                >
-                  {skill}
-                </Badge>
-              ))}
-            </div>
-          </div>
-        </div>
-        <div
-          className={cn(
-            'absolute top-0 left-0 w-full flex flex-wrap justify-center gap-2 transition-opacity duration-500',
-            isExpanded ? 'opacity-100' : 'opacity-0 pointer-events-none'
-          )}
-        >
-          {allSkills.map((skill) => (
-            <Badge
-              key={skill}
-              variant="secondary"
-              className="mx-2 whitespace-nowrap border-primary/20 bg-primary/10 px-4 py-2 text-md text-primary hover:bg-primary/20"
-            >
-              {skill}
-            </Badge>
-          ))}
-        </div>
       </div>
+
       <div className="mt-8 flex justify-center">
         <Button
           variant="ghost"
