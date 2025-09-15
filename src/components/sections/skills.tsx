@@ -98,9 +98,9 @@ export function Skills() {
           </AnimatePresence>
           <div
             className={cn(
-              'flex flex-wrap gap-2 transition-all duration-500',
+              'flex flex-wrap justify-center gap-2 transition-all duration-500',
               !showAll &&
-                'absolute top-0 left-0 w-[200%] animate-scroll-horizontal will-change-transform'
+                'absolute top-0 left-0 w-[200%] animate-scroll-horizontal justify-start will-change-transform'
             )}
             style={{ animationPlayState: showAll ? 'paused' : 'running' }}
           >
