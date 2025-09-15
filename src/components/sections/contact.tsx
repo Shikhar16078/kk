@@ -29,7 +29,7 @@ const formSchema = z.object({
 
 export function Contact() {
   const { toast } = useToast();
-  const recipientEmail = 'shikharkumar78@gmail.com';
+  const recipientEmail = personalData.contact.email;
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
