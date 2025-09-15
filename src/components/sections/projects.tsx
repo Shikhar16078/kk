@@ -22,20 +22,20 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 export function Projects() {
   const [showAll, setShowAll] = useState(false);
+  const isMobile = useIsMobile();
+
+  const shouldShowCarousel = !isMobile && !showAll;
 
   return (
     <SectionWrapper id="projects">
       <SectionTitle>Projects</SectionTitle>
 
-      <div
-        className={cn(
-          'relative transition-all duration-500 ease-in-out',
-        )}
-      >
-        {!showAll ? (
+      <div className={cn('relative transition-all duration-500 ease-in-out')}>
+        {shouldShowCarousel ? (
           <Carousel
             opts={{
               align: 'start',
@@ -81,12 +81,14 @@ export function Projects() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <div className="mt-8 flex justify-center gap-4">
+              <CarouselPrevious />
+              <CarouselNext />
+            </div>
           </Carousel>
         ) : (
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project) => (
+            {projects.slice(0, showAll || isMobile ? projects.length : 3).map((project) => (
               <Card
                 key={project.id}
                 className="flex h-full flex-col transition-transform duration-300 ease-in-out hover:-translate-y-1"
@@ -123,20 +125,22 @@ export function Projects() {
         )}
       </div>
 
-      <div className="mt-8 flex justify-center">
-        <Button
-          variant="ghost"
-          onClick={() => setShowAll(!showAll)}
-          className="group"
-        >
-          {showAll ? 'Show Less' : 'Show All'}
-          {showAll ? (
-            <ChevronUp className="ml-2 h-4 w-4 transition-transform group-hover:-translate-y-1" />
-          ) : (
-            <ChevronDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
-          )}
-        </Button>
-      </div>
+      {!isMobile && (
+        <div className="mt-8 flex justify-center">
+          <Button
+            variant="ghost"
+            onClick={() => setShowAll(!showAll)}
+            className="group"
+          >
+            {showAll ? 'Show Less' : 'Show All'}
+            {showAll ? (
+              <ChevronUp className="ml-2 h-4 w-4 transition-transform group-hover:-translate-y-1" />
+            ) : (
+              <ChevronDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
+            )}
+          </Button>
+        </div>
+      )}
     </SectionWrapper>
   );
 }
