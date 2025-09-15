@@ -14,10 +14,10 @@ export function Experience() {
     <SectionWrapper id="experience">
       <SectionTitle>Work Experience</SectionTitle>
       <div className="relative flex flex-col gap-y-12">
-        <div className="absolute left-3 top-0 h-full w-0.5 bg-border"></div>
+        <div className="absolute left-3 top-0 h-full w-0.5 bg-border md:left-5"></div>
         {workExperience.map((job, index) => (
-          <div key={index} className="relative pl-12">
-            <div className="absolute -left-5 top-1 flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary bg-background">
+          <div key={index} className="relative pl-12 md:pl-16">
+            <div className="absolute -left-2 top-1 flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary bg-background md:left-0">
               <Building className="h-5 w-5 text-primary" />
             </div>
             <Card>
