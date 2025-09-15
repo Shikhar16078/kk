@@ -74,7 +74,7 @@ export function Education() {
                       Relevant Courses
                     </AccordionTrigger>
                     <AccordionContent>
-                      <ul className="grid grid-cols-1 gap-2 pt-4 sm:grid-cols-2">
+                      <ul className="grid grid-cols-1 gap-2 pt-4">
                         {edu.courses.map((course) => (
                           <li key={course} className="flex items-center gap-2">
                             <CheckCircle className="h-4 w-4 shrink-0 text-primary" />
