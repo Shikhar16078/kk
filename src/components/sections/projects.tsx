@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { projects } from '@/lib/data';
 import { SectionWrapper, SectionTitle } from '../layout/section-wrapper';
 import {
@@ -19,8 +18,7 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+  CarouselPagination,
 } from '@/components/ui/carousel';
 import { cn } from '@/lib/utils';
 
@@ -48,7 +46,7 @@ export function Projects() {
               {projects.map((project) => (
                 <CarouselItem
                   key={project.id}
-                  className="md:basis-1/2 lg:basis-1/3"
+                  className="flex-none md:basis-1/2 lg:basis-1/3"
                 >
                   <div className="p-1 h-full">
                     <Card className="flex h-full flex-col transition-transform duration-300 ease-in-out hover:-translate-y-1">
@@ -83,8 +81,7 @@ export function Projects() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPagination />
           </Carousel>
         ) : (
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
