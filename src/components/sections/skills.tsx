@@ -77,7 +77,7 @@ export function Skills() {
       <div
         className={cn(
           'relative w-full overflow-hidden transition-all duration-500 ease-in-out',
-          isExpanded ? 'h-auto' : 'h-28'
+          isExpanded ? 'h-auto' : 'h-[7.5rem]'
         )}
       >
         <div
