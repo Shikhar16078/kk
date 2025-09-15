@@ -14,8 +14,7 @@ export function Contact() {
       <SectionTitle>Get in Touch</SectionTitle>
       <div className="mx-auto max-w-lg text-center">
         <p className="mt-4 text-lg text-muted-foreground">
-          Have a project in mind or just want to say hi? I&apos;d love to hear
-          from you.
+          Have an interesting idea to share or just want to say hi?
         </p>
         <div className="mt-8 flex flex-col items-center gap-6">
           <Button asChild size="lg">
@@ -39,7 +38,7 @@ export function Contact() {
                   rel="noopener noreferrer"
                   aria-label={social.name}
                 >
-                  <social.icon className="h-7 w-7 text-muted-foreground transition-colors hover:text-primary" />
+                  <social.icon className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
                 </Link>
               </Button>
             ))}
