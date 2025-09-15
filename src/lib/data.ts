@@ -1,4 +1,4 @@
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin, Youtube } from 'lucide-react';
 import type {
   PersonalData,
   WorkExperience,
@@ -13,7 +13,7 @@ export const personalData: PersonalData = {
   bio: 'Calm, Artistic and Ambitious :)',
   image: 'profile-photo',
   contact: {
-    email: 'kshittiz.k@gmail.com',
+    email: 'your.email@example.com',
     social: [
       {
         name: 'GitHub',
@@ -25,6 +25,11 @@ export const personalData: PersonalData = {
         url: 'https://www.linkedin.com/in/kshittiz-kumar',
         icon: Linkedin,
       },
+      {
+        name: 'YouTube',
+        url: 'https://www.youtube.com/@yourchannel',
+        icon: Youtube,
+      },
     ],
   },
 };
@@ -33,14 +38,20 @@ export const workExperience: WorkExperience[] = [
   {
     company: 'Microsoft',
     role: 'Senior Software Engineer',
-    startDate: 'Jan 2022',
+    startDate: 'Sep 2025',
     endDate: 'Present',
+    accomplishments: [],
+  },
+  {
+    company: 'Microsoft',
+    role: 'Software Engineer II',
+    startDate: 'Jan 2022',
+    endDate: 'Sep 2025',
     accomplishments: [
-      'As a Software Engineer II, focused on Azure Cosmos Database Back-up & Restore.',
-      'Designed and implemented backup and restore solutions for partitioned collections and databases in Azure Cosmos DB, focusing on complex restore scenarios, resiliency, and high availability.',
-      'Architected solutions that ensure data consistency and quick recovery, leveraging both periodic and continuous backup modes.',
-      'Specialized in optimizing restore workflows for large-scale, multi-partitioned environments, ensuring minimal downtime and maximum data integrity.',
-      'Managed restore permissions at scale, automating recovery processes, and collaborating with cross-functional teams.',
+      'Azure Cosmos Database Back-up & Restore.',
+      'I design and implement backup and restore solutions for partitioned collections and databases in Azure Cosmos DB, focusing on complex restore scenarios, resiliency, and high availability. My work involves architecting solutions that ensure data consistency and quick recovery, leveraging both periodic and continuous backup modes to meet business continuity requirements.',
+      'I specialize in optimizing restore workflows for large-scale, multi-partitioned environments, ensuring minimal downtime and maximum data integrity.',
+      'My expertise includes managing restore permissions at scale, automating recovery processes, and collaborating with cross-functional teams to drive operational excellence in cloud-native data services.',
     ],
   },
   {
@@ -49,10 +60,16 @@ export const workExperience: WorkExperience[] = [
     startDate: 'July 2019',
     endDate: 'Jan 2022',
     accomplishments: [
-      'Formulated complex SQL queries to upload ~300TB of data on Snowflake and setup AWS lambda with Snowpipe for daily uploads.',
-      'Built a distributed web service in Go powered by Redis to run SQL queries on Snowflake and ship results to Amazon S3.',
-      'Redesigned an existing C++ service in Java, increasing performance by 8 times.',
-      'Instrumented existing Go services with OpenTracing to leverage LightStep monitoring.',
+      'Formulated complex SQL queries and procedures to upload ~300TB of data on Snowflake’s cloud data warehouse. Wrote queries to support multiple corporate actions like 1-Minute-Bins, split adjustments.',
+      'Setup AWS lambda in Python coupled with Snowflake’s Snowpipe to trigger daily uploads (~0.5TB).',
+      'Designed automated tasks on snowflake powered by SQL procedure for stamping different regions of new incoming data on nightly basis.',
+      'Implemented a MapReduce job to convert CSVs to Parquet files for building a clean and compressed data lake agnostic to data warehouse.',
+      'Built a distributed web service powered by Redis with a custom SQL generation library to run SQL queries on Snowflake and ship result to any Amazon S3 bucket. Leveraged Go routines to handle multiple async requests, status polling and email notifications.',
+      'Wrote a service in Go to validate JSON response of other services using a pre-defined schema stored in zookeeper.',
+      'Redesigned and implemented an existing C++ service in Java and increased performance by 8 times.',
+      'Created a tool in Go to compare JSON response and response-time of another service running in different environments, for testing purposes.',
+      'Instrumented existing web services in Go with OpenTracing to leverage LightStep monitoring.',
+      'Refactored some existing Java and Go services for efficiency and readability.',
     ],
   },
   {
@@ -61,9 +78,9 @@ export const workExperience: WorkExperience[] = [
     startDate: 'May 2018',
     endDate: 'Aug 2018',
     accomplishments: [
-      'Created a tracer for distributed tracing using OpenTracing APIs in Java for real-time performance monitoring of services.',
-      'Achieved code coverage of 85% using JUnit test cases.',
-      'Worked with Java, JUnit, Spring Boot, OpenTracing, and Jenkins.',
+      'Created a tracer (for distributed tracing) using OpenTracing APIs (Java) for real time performance monitoring of services, that acts as bridge between proprietary centralized applications logging system and OpenTracing.',
+      'Achieved code coverage of 85% using Junit test cases.',
+      'Tools & Technologies: Java, Junit, Spring boot, OpenTracing, Jenkins',
     ],
   },
   {
@@ -72,10 +89,12 @@ export const workExperience: WorkExperience[] = [
     startDate: 'Oct 2015',
     endDate: 'May 2017',
     accomplishments: [
-      'Full stack developer, with a specialization in back-end using Java EE.',
-      'Constructed RESTful web services, EJBs, and CRUD operations using JPA for a Network Management System.',
-      'Achieved ~95% code coverage using TestNG, Mockito, and PowerMock.',
-      'Peer code reviews and provided knowledge transfer sessions to new recruits.',
+      'Full stack developer, specialization back-end using Java JEE',
+      'Part of Team Excellence Award (October 2016) winner group. Worked on - Network Management System for Padtec.',
+      'Constructed RESTful web services, entity classes, EJBs, DB schema and CRUD operations using JPA.',
+      'Performed unit testing by writing test cases using TestNG, Mockito and PowerMock framework with a code coverage of ~95%',
+      'Peer code reviews and quality testing.',
+      'Provide KT(Knowledge Transfer) sessions to new recruits on project.',
     ],
   },
 ];
@@ -201,7 +220,13 @@ export const projects: Project[] = [
     title: 'PCAP File Analysis',
     description:
       'Analyzed PCAP files for attacks and network characteristics using tools like Wireshark and Bro. Wrote Python scripts to analyze packet frequency and plotted statistics using Gnuplot.',
-    techStack: ['Python', 'Wireshark', 'Bro (Zeek)', 'Gnuplot', 'Network Security'],
+    techStack: [
+      'Python',
+      'Wireshark',
+      'Bro (Zeek)',
+      'Gnuplot',
+      'Network Security',
+    ],
     liveDemoUrl: '#',
     githubUrl: '#',
     image: 'project-9',
