@@ -17,8 +17,8 @@ export function Hero() {
             <div className="mt-2">
               <h2 className="flex items-center gap-2 font-headline text-2xl font-medium text-foreground/80 sm:text-3xl">
                 <Image
-                  src="/images/microsoft.svg"
-                  alt="Microsoft logo"
+                  src="/images/microsoft_logo.png"
+                  alt="logo"
                   width={24}
                   height={24}
                 />

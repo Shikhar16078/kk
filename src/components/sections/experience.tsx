@@ -8,17 +8,27 @@ import {
   CardDescription,
 } from '@/components/ui/card';
 import { Building, CalendarDays, CheckCircle } from 'lucide-react';
+import Image from 'next/image';
 
 export function Experience() {
   return (
     <SectionWrapper id="experience">
       <SectionTitle>Work Experience</SectionTitle>
       <div className="relative flex flex-col gap-y-12">
-        <div className="absolute left-3 top-5 h-full w-0.5 bg-border md:left-5"></div>
+        <div className="absolute left-3 top-5 -z-10 h-full w-0.5 bg-border md:left-5"></div>
         {workExperience.map((job, index) => (
           <div key={index} className="relative pl-12 md:pl-16">
             <div className="absolute -left-2 top-1 flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary bg-background md:left-0">
-              <Building className="h-5 w-5 text-primary" />
+              {job.company === 'Microsoft' ? (
+                <Image
+                  src="/images/microsoft_logo.png"
+                  alt="Microsoft logo"
+                  width={24}
+                  height={24}
+                />
+              ) : (
+                <Building className="h-5 w-5 text-primary" />
+              )}
             </div>
             <Card>
               <CardHeader>
