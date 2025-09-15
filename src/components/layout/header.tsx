@@ -12,6 +12,7 @@ import { ThemeToggleButton } from '../ui/theme-toggle-button';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,10 +24,7 @@ export function Header() {
     };
   }, []);
 
-  const handleLinkClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    closeSheet?: () => void
-  ) => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const targetId = e.currentTarget.getAttribute('href');
     if (targetId && targetId.startsWith('#')) {
       e.preventDefault();
@@ -39,22 +37,16 @@ export function Header() {
         }
       }
     }
-    closeSheet?.();
+    setIsSheetOpen(false);
   };
 
-  const NavLinkItems = ({
-    mobile = false,
-    closeSheet,
-  }: {
-    mobile?: boolean;
-    closeSheet?: () => void;
-  }) => (
+  const NavLinkItems = ({ mobile = false }: { mobile?: boolean }) => (
     <>
       {navLinks.map((link) => (
         <a
           key={link.href}
           href={link.href}
-          onClick={(e) => handleLinkClick(e, closeSheet)}
+          onClick={handleLinkClick}
           className={cn(
             'flex items-center gap-2 font-medium text-foreground/70 transition-all duration-200 ease-in-out hover:scale-110 hover:text-primary',
             mobile && 'text-lg'
@@ -95,22 +87,18 @@ export function Header() {
         <div className="flex items-center gap-2">
           <ThemeToggleButton />
           <div className="md:hidden">
-            <Sheet>
-              {(open) => (
-                <>
-                  <SheetTrigger asChild>
-                    <Button variant="ghost" size="icon">
-                      <Menu className="h-6 w-6" />
-                      <span className="sr-only">Toggle Menu</span>
-                    </Button>
-                  </SheetTrigger>
-                  <SheetContent side="right">
-                    <nav className="mt-8 flex flex-col gap-6">
-                      <NavLinkItems mobile closeSheet={() => open(false)} />
-                    </nav>
-                  </SheetContent>
-                </>
-              )}
+            <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Toggle Menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right">
+                <nav className="mt-8 flex flex-col gap-6">
+                  <NavLinkItems mobile />
+                </nav>
+              </SheetContent>
             </Sheet>
           </div>
         </div>
