@@ -54,7 +54,7 @@ export function Hero() {
                       rel="noopener noreferrer"
                       aria-label={social.name}
                     >
-                      <social.icon className="h-8 w-8 text-foreground/70 transition-colors hover:text-primary" />
+                      <social.icon className="h-10 w-10 text-foreground/70 transition-colors hover:text-primary" />
                     </a>
                   </Button>
                 ))}
