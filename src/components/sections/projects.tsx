@@ -32,7 +32,6 @@ export function Projects() {
       <div
         className={cn(
           'relative transition-all duration-500 ease-in-out',
-          !showAll ? 'max-h-[500px] overflow-hidden' : 'max-h-full'
         )}
       >
         {!showAll ? (
