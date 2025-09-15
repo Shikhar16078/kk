@@ -13,7 +13,7 @@ export const personalData: PersonalData = {
   bio: 'Senior Software Engineer with extensive experience in cloud technologies, distributed systems, and full-stack development. Passionate about building robust and scalable software solutions.',
   image: 'profile-photo',
   contact: {
-    email: 'your.email@example.com',
+    email: 'kshittiz.k@gmail.com',
     social: [
       {
         name: 'GitHub',
@@ -27,7 +27,7 @@ export const personalData: PersonalData = {
       },
       {
         name: 'YouTube',
-        url: 'https://www.youtube.com/@yourchannel',
+        url: 'https://www.youtube.com/@LeetCodeLearning',
         icon: Youtube,
       },
     ],
@@ -258,7 +258,7 @@ export const projects: Project[] = [
       'A car rental web application designed and developed using Ruby on Rails along with Bootstrap. Designed the front-end (view) and controllers for user permissions and car reservations.',
     techStack: ['Ruby on Rails', 'Bootstrap', 'MVC', 'SQL'],
     liveDemoUrl: '#',
-    githubUrl: '#',
+githuubUrl: '#',
     image: 'project-12',
   },
 ];
