@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { AnimatedGradient } from '../ui/animated-gradient';
-import { Briefcase } from 'lucide-react';
 
 export function Hero() {
   return (
@@ -17,7 +16,12 @@ export function Hero() {
             </h1>
             <div className="mt-2">
               <h2 className="flex items-center gap-2 font-headline text-2xl font-medium text-foreground/80 sm:text-3xl">
-                <Briefcase className="h-6 w-6" />
+                <Image
+                  src="/images/microsoft.svg"
+                  alt="Microsoft logo"
+                  width={24}
+                  height={24}
+                />
                 Senior Software Engineer
               </h2>
               <p className="font-headline text-xl text-foreground/70">
