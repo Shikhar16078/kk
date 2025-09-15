@@ -51,7 +51,7 @@ export function Education() {
                     />
                   </div>
                   <div className="flex-grow">
-                    <CardTitle className="font-headline text-xl min-h-[56px]">
+                    <CardTitle className="font-headline text-xl">
                       {edu.degree}
                     </CardTitle>
                     <CardDescription className="pt-1">
