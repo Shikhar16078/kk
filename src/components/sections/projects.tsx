@@ -18,7 +18,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselPagination,
+  CarouselNext,
+  CarouselPrevious,
 } from '@/components/ui/carousel';
 import { cn } from '@/lib/utils';
 
@@ -39,7 +40,7 @@ export function Projects() {
             opts={{
               align: 'start',
             }}
-            className="w-full"
+            className="w-full max-w-4xl mx-auto"
           >
             <CarouselContent>
               {projects.map((project) => (
@@ -80,7 +81,8 @@ export function Projects() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPagination />
+            <CarouselPrevious />
+            <CarouselNext />
           </Carousel>
         ) : (
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
