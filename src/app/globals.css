@@ -129,11 +129,11 @@
   }
 
   .animate-scroll-horizontal {
-    animation: scroll-horizontal 60s linear infinite;
+    animation: scroll-horizontal 40s linear infinite;
   }
 
   .animate-scroll-horizontal-reverse {
-    animation: scroll-horizontal-reverse 60s linear infinite;
+    animation: scroll-horizontal-reverse 40s linear infinite;
   }
   
   @keyframes scroll-horizontal {
