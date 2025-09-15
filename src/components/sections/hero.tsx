@@ -15,17 +15,21 @@ export function Hero() {
               <span className="text-primary">{personalData.name}</span>
             </h1>
             <div className="mt-2">
-              <h2 className="flex items-center gap-2 font-headline text-2xl font-medium text-foreground/80 sm:text-3xl">
-                <Image
-                  src="/images/microsoft_logo.png"
-                  alt="logo"
-                  width={24}
-                  height={24}
-                />
-                Senior Software Engineer
+              <h2 className="flex flex-wrap items-center gap-2 font-headline text-2xl font-medium text-foreground/80 sm:text-3xl">
+                Senior Software Engineer @
+                <span className="inline-flex items-center gap-1">
+                  <span className="whitespace-nowrap">Microsoft</span>
+                  <Image
+                    src="/images/microsoft_logo.png"
+                    alt="Microsoft logo"
+                    width={20}
+                    height={20}
+                    className="h-5 w-5 sm:h-6 sm:w-6 object-contain"
+                  />
+                </span>
               </h2>
               <p className="font-headline text-xl text-foreground/70">
-                Microsoft | PayPal | FactSet
+              FactSet | PayPal | Aricent (Capgemini)
               </p>
             </div>
             <p className="mt-6 max-w-xl text-lg text-foreground/70">
