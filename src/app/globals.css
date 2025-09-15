@@ -72,6 +72,10 @@
 }
 
 @layer utilities {
+  .animate-neon-ring {
+    animation: neon-ring 4s linear infinite;
+  }
+
   @keyframes neon-ring {
     0% {
       transform: rotate(0deg);
