@@ -7,13 +7,19 @@ import {
   CardContent,
   CardDescription,
 } from '@/components/ui/card';
-import { GraduationCap, CalendarDays, CheckCircle, Award } from 'lucide-react';
+import { CalendarDays, CheckCircle, Award } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import Image from 'next/image';
+
+const educationLogos: { [key: string]: string } = {
+  'North Carolina State University': '/images/ncstate.jpg',
+  'Guru Gobind Singh Indraprastha University': '/images/ggsipu.jpg',
+};
 
 export function Education() {
   return (
@@ -21,18 +27,19 @@ export function Education() {
       <SectionTitle>Education</SectionTitle>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {education.map((edu, index) => (
-          <Accordion
-            key={index}
-            type="single"
-            collapsible
-            className="w-full"
-          >
+          <Accordion key={index} type="single" collapsible className="w-full">
             <AccordionItem value={`item-${index}`} asChild>
               <Card className="flex h-full flex-col">
                 <CardHeader>
                   <div className="flex items-center gap-4">
-                    <div className="rounded-full bg-primary/10 p-3">
-                      <GraduationCap className="h-6 w-6 text-primary" />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 p-1">
+                      <Image
+                        src={educationLogos[edu.institution]}
+                        alt={`${edu.institution} logo`}
+                        width={40}
+                        height={40}
+                        className="rounded-full object-contain"
+                      />
                     </div>
                     <div>
                       <CardTitle className="font-headline text-xl">

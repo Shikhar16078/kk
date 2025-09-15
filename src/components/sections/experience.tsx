@@ -11,10 +11,10 @@ import { Building, CalendarDays, CheckCircle } from 'lucide-react';
 import Image from 'next/image';
 
 const companyLogos: { [key: string]: string } = {
-  Microsoft: '/images/microsoft_logo.png',
-  FactSet: '/images/factset_logo.jpeg',
-  PayPal: '/images/paypal_logo.jpeg',
-  Aricent: '/images/aricent_logo.png',
+  Microsoft: '/images/microsoft.png',
+  FactSet: '/images/factset.jpeg',
+  PayPal: '/images/paypal.jpeg',
+  Aricent: '/images/aricent.jpeg',
 };
 
 export function Experience() {
