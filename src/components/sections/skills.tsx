@@ -84,7 +84,7 @@ export function Skills() {
             className={cn(
               'flex flex-wrap gap-2 transition-all duration-500',
               !showAll
-                ? 'absolute top-0 left-0 w-[200%] animate-scroll-horizontal justify-start will-change-transform group-hover:[animation-play-state:paused]'
+                ? 'animate-scroll-horizontal absolute left-0 top-0 w-[200%] justify-start will-change-transform group-hover:[animation-play-state:paused]'
                 : 'justify-center'
             )}
           >
@@ -92,7 +92,7 @@ export function Skills() {
               <Badge
                 key={`${skill}-${index}`}
                 variant="secondary"
-                className="whitespace-nowrap border-primary/20 bg-primary/10 px-4 py-2 text-base text-primary shadow-sm transition-all hover:bg-primary/20 hover:shadow-md"
+                className="cursor-pointer select-none whitespace-nowrap border-primary/20 bg-primary/10 px-4 py-2 text-base text-primary shadow-sm transition-all hover:bg-primary/20 hover:shadow-md"
               >
                 {skill}
               </Badge>
