@@ -259,7 +259,7 @@ export const projects: Project[] = [
 ];
 
 export const navLinks: NavLink[] = [
-  { href: '#about', label: 'About' },
+  { href: '#about', label: 'Home' },
   { href: '#experience', label: 'Experience' },
   { href: '#skills', label: 'Skills' },
   { href: '#projects', label: 'Projects' },
