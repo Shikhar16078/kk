@@ -66,7 +66,7 @@ export function Education() {
                       </span>
                     )}
                   </div>
-                  <p className="mt-4 text-muted-foreground">
+                  <p className="mt-4 flex-grow text-muted-foreground">
                     {edu.description}
                   </p>
                   <div className="mt-auto">
