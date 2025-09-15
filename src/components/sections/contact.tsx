@@ -7,7 +7,7 @@ import { Mail } from 'lucide-react';
 import Link from 'next/link';
 
 export function Contact() {
-  const recipientEmail = personalData.contact.email;
+  const recipientEmail = 'kshittiz.k@gmail.com';
 
   return (
     <SectionWrapper id="contact" className="bg-card">

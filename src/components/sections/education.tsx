@@ -7,7 +7,7 @@ import {
   CardContent,
   CardDescription,
 } from '@/components/ui/card';
-import { GraduationCap, CalendarDays, CheckCircle } from 'lucide-react';
+import { GraduationCap, CalendarDays, CheckCircle, Award } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
@@ -45,11 +45,19 @@ export function Education() {
                   </div>
                 </CardHeader>
                 <CardContent className="flex flex-grow flex-col">
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <CalendarDays className="h-4 w-4" />
-                    <span>
-                      {edu.startDate} - {edu.endDate}
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                    <span className="flex items-center gap-2">
+                      <CalendarDays className="h-4 w-4" />
+                      <span>
+                        {edu.startDate} - {edu.endDate}
+                      </span>
                     </span>
+                    {edu.gpa && (
+                      <span className="flex items-center gap-2">
+                        <Award className="h-4 w-4" />
+                        <span>{edu.gpa}</span>
+                      </span>
+                    )}
                   </div>
                   <p className="mt-4 text-muted-foreground">
                     {edu.description}

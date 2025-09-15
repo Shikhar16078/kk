@@ -37,6 +37,7 @@ export type Education = {
   endDate: string;
   description: string;
   courses: string[];
+  gpa?: string;
 };
 
 export type Project = {

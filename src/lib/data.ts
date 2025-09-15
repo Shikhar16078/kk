@@ -105,6 +105,7 @@ export const education: Education[] = [
     degree: "Master's degree, Computer Science",
     startDate: '2017',
     endDate: '2019',
+    gpa: 'GPA: 4.0/4.0',
     description:
       'Completed a Master of Science with a focus on core computer science principles and practices.',
     courses: [
@@ -121,6 +122,7 @@ export const education: Education[] = [
     degree: 'Bachelor of Technology, Computer Science & Engineering',
     startDate: '2011',
     endDate: '2015',
+    gpa: 'GPA: 8.5/10',
     description:
       'Gained a strong foundation in computer science and engineering principles.',
     courses: [
@@ -258,7 +260,7 @@ export const projects: Project[] = [
       'A car rental web application designed and developed using Ruby on Rails along with Bootstrap. Designed the front-end (view) and controllers for user permissions and car reservations.',
     techStack: ['Ruby on Rails', 'Bootstrap', 'MVC', 'SQL'],
     liveDemoUrl: '#',
-githuubUrl: '#',
+    githubUrl: '#',
     image: 'project-12',
   },
 ];

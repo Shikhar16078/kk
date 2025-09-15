@@ -11,13 +11,13 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github } from 'lucide-react';
 
 export function Projects() {
   return (
     <SectionWrapper id="projects">
       <SectionTitle>Projects</SectionTitle>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <Card
             key={project.id}
@@ -46,15 +46,6 @@ export function Projects() {
                   rel="noopener noreferrer"
                 >
                   <Github /> Source
-                </a>
-              </Button>
-              <Button asChild>
-                <a
-                  href={project.liveDemoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <ExternalLink /> Live Demo
                 </a>
               </Button>
             </CardFooter>
