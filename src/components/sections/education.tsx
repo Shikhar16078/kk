@@ -38,7 +38,7 @@ export function Education() {
                         alt={`${edu.institution} logo`}
                         width={40}
                         height={40}
-                        className="rounded-full object-contain"
+                        className="rounded-full object-cover"
                       />
                     </div>
                     <div>
