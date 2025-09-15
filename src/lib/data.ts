@@ -1,4 +1,15 @@
-import { Github, Linkedin, Youtube } from 'lucide-react';
+import {
+  Briefcase,
+  FolderGit2,
+  GraduationCap,
+  Home,
+  Mail,
+  Wrench,
+  Github,
+  Linkedin,
+  Youtube,
+  BrainCircuit,
+} from 'lucide-react';
 import type {
   PersonalData,
   WorkExperience,
@@ -95,7 +106,7 @@ export const workExperience: WorkExperience[] = [
 export const education: Education[] = [
   {
     institution: 'North Carolina State University',
-    degree: "Master of Computer Science",
+    degree: 'Master of Computer Science',
     startDate: '2017',
     endDate: '2019',
     gpa: 'GPA: 3.7/4.0',
@@ -259,10 +270,10 @@ export const projects: Project[] = [
 ];
 
 export const navLinks: NavLink[] = [
-  { href: '#about', label: 'Home' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#education', label: 'Education' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#about', label: 'Home', icon: Home },
+  { href: '#experience', label: 'Experience', icon: Briefcase },
+  { href: '#skills', label: 'Skills', icon: BrainCircuit },
+  { href: '#projects', label: 'Projects', icon: FolderGit2 },
+  { href: '#education', label: 'Education', icon: GraduationCap },
+  { href: '#contact', label: 'Contact', icon: Mail },
 ];

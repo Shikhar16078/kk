@@ -23,7 +23,10 @@ export function Header() {
     };
   }, []);
 
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    closeSheet?: () => void
+  ) => {
     const targetId = e.currentTarget.getAttribute('href');
     if (targetId && targetId.startsWith('#')) {
       e.preventDefault();
@@ -36,29 +39,33 @@ export function Header() {
         }
       }
     }
+    closeSheet?.();
   };
 
-  const navLinkItems = navLinks.map((link) => (
-    <a
-      key={link.href}
-      href={link.href}
-      onClick={handleLinkClick}
-      className="font-medium text-foreground/70 transition-colors hover:text-primary"
-    >
-      {link.label}
-    </a>
-  ));
-
-  const mobileNavLinkItems = navLinks.map((link) => (
-    <a
-      key={link.href}
-      href={link.href}
-      onClick={handleLinkClick}
-      className="text-lg font-medium text-foreground/70 transition-colors hover:text-primary"
-    >
-      {link.label}
-    </a>
-  ));
+  const NavLinkItems = ({
+    mobile = false,
+    closeSheet,
+  }: {
+    mobile?: boolean;
+    closeSheet?: () => void;
+  }) => (
+    <>
+      {navLinks.map((link) => (
+        <a
+          key={link.href}
+          href={link.href}
+          onClick={(e) => handleLinkClick(e, closeSheet)}
+          className={cn(
+            'flex items-center gap-2 font-medium text-foreground/70 transition-colors hover:text-primary',
+            mobile && 'text-lg'
+          )}
+        >
+          <link.icon className={cn('h-4 w-4', mobile && 'h-5 w-5')} />
+          {link.label}
+        </a>
+      ))}
+    </>
+  );
 
   return (
     <header
@@ -82,24 +89,28 @@ export function Header() {
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
-          {navLinkItems}
+          <NavLinkItems />
         </nav>
 
         <div className="flex items-center gap-2">
           <ThemeToggleButton />
           <div className="md:hidden">
             <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-6" />
-                  <span className="sr-only">Toggle Menu</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right">
-                <nav className="mt-8 flex flex-col gap-6">
-                  {mobileNavLinkItems}
-                </nav>
-              </SheetContent>
+              {(open) => (
+                <>
+                  <SheetTrigger asChild>
+                    <Button variant="ghost" size="icon">
+                      <Menu className="h-6 w-6" />
+                      <span className="sr-only">Toggle Menu</span>
+                    </Button>
+                  </SheetTrigger>
+                  <SheetContent side="right">
+                    <nav className="mt-8 flex flex-col gap-6">
+                      <NavLinkItems mobile closeSheet={() => open(false)} />
+                    </nav>
+                  </SheetContent>
+                </>
+              )}
             </Sheet>
           </div>
         </div>

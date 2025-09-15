@@ -4,10 +4,10 @@ import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-  title: 'Kshittiz',
+  title: 'Kshittiz Kumar',
   description: 'A modern portfolio for a top-notch software developer.',
   icons: {
-    icon: '/profile.jpg?v=2',
+    icon: 'images/app_icon.png',
   },
 };
 
