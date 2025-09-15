@@ -24,12 +24,12 @@ export function Hero() {
                     alt="Microsoft logo"
                     width={20}
                     height={20}
-                    className="h-5 w-5 sm:h-6 sm:w-6 object-contain"
+                    className="h-5 w-5 object-contain sm:h-6 sm:w-6"
                   />
                 </span>
               </h2>
               <p className="font-headline text-xl text-foreground/70">
-              FactSet | PayPal | Aricent (Capgemini)
+                FactSet | PayPal | Aricent (Capgemini)
               </p>
             </div>
             <p className="mt-6 max-w-xl text-lg text-foreground/70">
@@ -46,7 +46,7 @@ export function Hero() {
                     asChild
                     variant="ghost"
                     size="icon"
-                    className="h-12 w-12"
+                    className="h-14 w-14"
                   >
                     <a
                       href={social.url}
@@ -54,7 +54,7 @@ export function Hero() {
                       rel="noopener noreferrer"
                       aria-label={social.name}
                     >
-                      <social.icon className="h-6 w-6 text-foreground/70 transition-colors hover:text-primary" />
+                      <social.icon className="h-7 w-7 text-foreground/70 transition-colors hover:text-primary" />
                     </a>
                   </Button>
                 ))}
