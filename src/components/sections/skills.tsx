@@ -1,7 +1,11 @@
 'use client';
 
+import { useState } from 'react';
 import { SectionWrapper, SectionTitle } from '../layout/section-wrapper';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const allSkills = [
   'HTML',
@@ -56,15 +60,49 @@ const allSkills = [
 ];
 
 export function Skills() {
+  const [isExpanded, setIsExpanded] = useState(false);
   const duplicatedSkills = [...allSkills, ...allSkills];
+
   return (
     <SectionWrapper id="skills">
-      <SectionTitle>Skills</SectionTitle>
-      <div className="relative w-full overflow-hidden">
-        <div className="flex w-max animate-scroll-horizontal">
-          {duplicatedSkills.map((skill, index) => (
+      <div className="flex items-center justify-center">
+        <SectionTitle>Skills</SectionTitle>
+      </div>
+      <div
+        className={cn(
+          'relative w-full overflow-hidden transition-all duration-500 ease-in-out',
+          isExpanded ? 'h-auto' : 'h-14'
+        )}
+      >
+        <div
+          className={cn(
+            'transition-opacity duration-500',
+            isExpanded ? 'opacity-0' : 'opacity-100'
+          )}
+        >
+          <div className="group relative w-full overflow-hidden">
+            <div className="flex w-max animate-scroll-horizontal group-hover:[animation-play-state:paused]">
+              {duplicatedSkills.map((skill, index) => (
+                <Badge
+                  key={`${skill}-${index}`}
+                  variant="secondary"
+                  className="mx-2 whitespace-nowrap border-primary/20 bg-primary/10 px-4 py-2 text-md text-primary hover:bg-primary/20"
+                >
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div
+          className={cn(
+            'absolute top-0 left-0 w-full flex flex-wrap justify-center gap-2 transition-opacity duration-500',
+            isExpanded ? 'opacity-100' : 'opacity-0'
+          )}
+        >
+          {allSkills.map((skill) => (
             <Badge
-              key={`${skill}-${index}`}
+              key={skill}
               variant="secondary"
               className="mx-2 whitespace-nowrap border-primary/20 bg-primary/10 px-4 py-2 text-md text-primary hover:bg-primary/20"
             >
@@ -72,6 +110,20 @@ export function Skills() {
             </Badge>
           ))}
         </div>
+      </div>
+      <div className="mt-8 flex justify-center">
+        <Button
+          variant="ghost"
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="group"
+        >
+          {isExpanded ? 'Show Less' : 'Show All'}
+          {isExpanded ? (
+            <ChevronUp className="ml-2 h-4 w-4 transition-transform group-hover:-translate-y-1" />
+          ) : (
+            <ChevronDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
+          )}
+        </Button>
       </div>
     </SectionWrapper>
   );
