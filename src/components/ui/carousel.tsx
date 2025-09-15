@@ -206,7 +206,7 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute h-8 w-8 rounded-full",
+        "absolute h-8 w-8 rounded-full hidden md:flex",
         "left-[-50px] top-1/2 -translate-y-1/2",
         className
       )}
@@ -233,7 +233,7 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute h-8 w-8 rounded-full",
+        "absolute h-8 w-8 rounded-full hidden md:flex",
         "right-[-50px] top-1/2 -translate-y-1/2",
         className
       )}
