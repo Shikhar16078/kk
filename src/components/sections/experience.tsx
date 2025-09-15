@@ -26,17 +26,7 @@ export function Experience() {
         {workExperience.map((job, index) => (
           <div key={index} className="relative pl-12 md:pl-16">
             <div className="absolute -left-2 top-1 flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary bg-background p-2 md:left-0">
-              {companyLogos[job.company] ? (
-                <Image
-                  src={companyLogos[job.company]}
-                  alt={`${job.company} logo`}
-                  width={28}
-                  height={28}
-                  className="object-contain"
-                />
-              ) : (
-                <Building className="h-5 w-5 text-primary" />
-              )}
+              <Building className="h-5 w-5 text-primary" />
             </div>
             <Card>
               <CardHeader>
@@ -46,7 +36,18 @@ export function Experience() {
                 <CardDescription>
                   <div className="flex flex-col gap-2 pt-1 sm:flex-row sm:items-center">
                     <span className="flex items-center gap-2">
-                      <Building className="h-4 w-4" /> {job.company}
+                      {companyLogos[job.company] ? (
+                        <Image
+                          src={companyLogos[job.company]}
+                          alt={`${job.company} logo`}
+                          width={16}
+                          height={16}
+                          className="h-4 w-4 object-contain"
+                        />
+                      ) : (
+                        <Building className="h-4 w-4" />
+                      )}{' '}
+                      {job.company}
                     </span>
                     <span className="hidden sm:inline">|</span>
                     <span className="flex items-center gap-2">
