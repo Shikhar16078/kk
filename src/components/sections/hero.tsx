@@ -50,7 +50,7 @@ export function Hero() {
             <div className="relative h-80 w-80">
               <div
                 className={cn(
-                  'absolute inset-0 rounded-3xl border-4 border-primary/50',
+                  'absolute inset-0 rounded-full border-4 border-primary/50',
                   'animate-neon-ring'
                 )}
               />
@@ -60,7 +60,7 @@ export function Hero() {
                 width={400}
                 height={400}
                 priority
-                className="relative h-full w-full rounded-3xl object-cover"
+                className="relative h-full w-full rounded-full object-cover"
                 data-ai-hint="professional headshot"
               />
             </div>
