@@ -56,24 +56,12 @@ export function Header() {
           href={link.href}
           onClick={(e) => handleLinkClick(e, closeSheet)}
           className={cn(
-            'group flex items-center gap-2 font-medium text-foreground/70 transition-colors hover:text-primary',
+            'flex items-center gap-2 font-medium text-foreground/70 transition-all duration-200 ease-in-out hover:scale-110 hover:text-primary',
             mobile && 'text-lg'
           )}
         >
-          <div className="overflow-hidden">
-            <div className="flex items-center gap-2 transition-transform duration-300 ease-in-out group-hover:-translate-y-full">
-              <div className="flex h-full flex-col">
-                <link.icon className={cn('h-4 w-4', mobile && 'h-5 w-5')} />
-                <link.icon
-                  className={cn('h-4 w-4 text-primary', mobile && 'h-5 w-5')}
-                />
-              </div>
-              <div className="flex h-full flex-col">
-                <span>{link.label}</span>
-                <span className="text-primary">{link.label}</span>
-              </div>
-            </div>
-          </div>
+          <link.icon className={cn('h-4 w-4', mobile && 'h-5 w-5')} />
+          <span>{link.label}</span>
         </a>
       ))}
     </>
