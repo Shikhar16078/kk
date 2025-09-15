@@ -8,7 +8,7 @@ export function Footer() {
       <div className="container mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-8 sm:flex-row sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
           <Code2 className="h-6 w-6 text-primary" />
-          <span className="font-headline text-lg font-bold">DevCard</span>
+          <span className="font-headline text-lg font-bold">Kshittiz</span>
         </Link>
         <p className="text-sm text-muted-foreground">
           &copy; {new Date().getFullYear()} {personalData.name}. All rights

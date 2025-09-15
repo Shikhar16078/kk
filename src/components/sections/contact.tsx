@@ -18,7 +18,7 @@ export function Contact() {
           from you.
         </p>
         <div className="mt-8 flex flex-col items-center gap-6">
-          <Button asChild size="lg" className="w-full max-w-xs">
+          <Button asChild size="lg">
             <a href={`mailto:${recipientEmail}`}>
               <Mail className="mr-2 h-5 w-5" />
               Email Me
