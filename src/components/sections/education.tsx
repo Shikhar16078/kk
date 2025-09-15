@@ -27,7 +27,11 @@ export function Education() {
   return (
     <SectionWrapper id="education">
       <SectionTitle>Education</SectionTitle>
-      <Accordion type="single" collapsible className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+      <Accordion
+        type="single"
+        collapsible
+        className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-start"
+      >
         {education.map((edu, index) => (
           <AccordionItem
             key={index}
@@ -36,7 +40,7 @@ export function Education() {
           >
             <Card className="flex h-full flex-col">
               <CardHeader>
-                <div className="flex items-center gap-4">
+                <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 p-1">
                     <Image
                       src={educationLogos[edu.institution]}
@@ -46,8 +50,8 @@ export function Education() {
                       className="rounded-full object-cover"
                     />
                   </div>
-                  <div>
-                    <CardTitle className="font-headline text-xl">
+                  <div className="flex-grow">
+                    <CardTitle className="font-headline text-xl min-h-[56px]">
                       {edu.degree}
                     </CardTitle>
                     <CardDescription className="pt-1">
