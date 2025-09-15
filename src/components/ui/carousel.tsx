@@ -110,19 +110,24 @@ const Carousel = React.forwardRef<
       [scrollPrev, scrollNext]
     )
 
+    const onInit = React.useCallback((api: CarouselApi) => {
+      if (!api) {
+        return
+      }
+      setScrollSnaps(api.scrollSnaps())
+    }, [])
+
     React.useEffect(() => {
       if (!api) {
         return
       }
 
-      setScrollSnaps(api.scrollSnaps())
+      onInit(api)
       onSelect(api)
-      api.on("reInit", (api) => {
-        setScrollSnaps(api.scrollSnaps())
-        onSelect(api)
-      })
+      api.on("reInit", onInit)
+      api.on("reInit", onSelect)
       api.on("select", onSelect)
-    }, [api, onSelect])
+    }, [api, onInit, onSelect])
 
     React.useEffect(() => {
       if (!api || !setApi) {

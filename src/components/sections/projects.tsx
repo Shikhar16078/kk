@@ -46,7 +46,7 @@ export function Projects() {
               {projects.map((project) => (
                 <CarouselItem
                   key={project.id}
-                  className="flex-none md:basis-1/2 lg:basis-1/3"
+                  className="md:basis-1/2 lg:basis-1/3"
                 >
                   <div className="p-1 h-full">
                     <Card className="flex h-full flex-col transition-transform duration-300 ease-in-out hover:-translate-y-1">
