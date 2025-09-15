@@ -82,10 +82,10 @@ export function Skills() {
           </AnimatePresence>
           <div
             className={cn(
-              'flex flex-wrap gap-2 transition-all duration-500',
+              'flex flex-nowrap gap-2',
               !showAll
-                ? 'animate-scroll-horizontal absolute left-0 top-0 w-[200%] justify-start will-change-transform group-hover:[animation-play-state:paused]'
-                : 'justify-center'
+                ? 'animate-scroll-horizontal absolute left-0 top-0 w-[200%] group-hover:[animation-play-state:paused]'
+                : 'flex-wrap justify-center'
             )}
           >
             {[...allSkills, ...allSkills].map((skill, index) => (
