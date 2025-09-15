@@ -1,41 +1,68 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import {
-  generateCategorizedSkills,
-  GenerateCategorizedSkillsOutput,
-} from '@/ai/flows/generate-categorized-skills';
-import { workExperience, projects } from '@/lib/data';
 import { SectionWrapper, SectionTitle } from '../layout/section-wrapper';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '../ui/card';
 import { BrainCircuit, Code, Database, Server, Star } from 'lucide-react';
-import { Skeleton } from '../ui/skeleton';
 
-const defaultSkills: GenerateCategorizedSkillsOutput = {
+const categorizedSkills = {
   frontendSkills: [
-    'React',
-    'Next.js',
-    'TypeScript',
-    'Tailwind CSS',
-    'HTML5 & CSS3',
+    'HTML',
+    'Cascading Style Sheets (CSS)',
+    'Bootstrap',
+    'User Interface Design',
   ],
-  backendSkills: ['Node.js', 'Python', 'Express', 'Flask', 'REST APIs'],
-  aiSkills: [
-    'TensorFlow',
-    'PyTorch',
-    'scikit-learn',
-    'Genkit',
-    'LLM Integration',
+  backendSkills: [
+    'Software Design',
+    'Software Infrastructure',
+    'Core Java',
+    'Java Enterprise Edition',
+    'Jee',
+    'Enterprise JavaBeans (EJB)',
+    'JPA',
+    'Microservices',
+    'Distributed Systems',
+    'Representational State Transfer (REST)',
+    'Back-End Web Development',
+    'Object Oriented Design',
+    'Object-Oriented Programming (OOP)',
+    'Java',
+    'Python (Programming Language)',
+    'Go (Programming Language)',
+    'C (Programming Language)',
+    'Powershell',
+    'C#',
+    'Spring Boot',
+    'Spring MVC',
   ],
-  databaseSkills: ['PostgreSQL', 'MongoDB', 'Redis', 'SQL', 'NoSQL'],
+  aiSkills: ['Distributed tracing'],
+  databaseSkills: [
+    'SQL',
+    'MySQL',
+    'Snowflake',
+    'Database Management System (DBMS)',
+    'Azure Cosmos DB',
+    'Database Design',
+  ],
   generalSkills: [
-    'CI/CD',
-    'Docker',
+    'BCDR',
     'Git',
+    'Linux',
+    'Microsoft Office',
+    'Software Development',
+    'Programming',
+    'Windows',
+    'algorithms',
+    'Ruby',
+    'JUnit',
+    'TestNG',
     'Agile Methodologies',
-    'Problem Solving',
+    'Cryptography',
+    'Jenkins',
+    'docker',
+    'Cloud Computing',
+    'Microsoft Azure',
   ],
 };
 
@@ -56,45 +83,6 @@ const categoryLabels = {
 };
 
 export function Skills() {
-  const [skills, setSkills] =
-    useState<GenerateCategorizedSkillsOutput | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchSkills = async () => {
-      setLoading(true);
-      const experienceDescription = workExperience
-        .map(
-          (w) =>
-            `${w.role} at ${w.company}: ${w.accomplishments.join(' ')}`
-        )
-        .join('\n');
-      const projectDescriptions = projects
-        .map(
-          (p) =>
-            `${p.title}: ${p.description} using ${p.techStack.join(', ')}`
-        )
-        .join('\n');
-
-      try {
-        const result = await generateCategorizedSkills({
-          experienceDescription,
-          projectDescriptions,
-        });
-        setSkills(result);
-      } catch (error) {
-        console.error(
-          'Failed to generate skills, using default skills:',
-          error
-        );
-        setSkills(defaultSkills);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchSkills();
-  }, []);
-
   const renderSkills = (skillList: string[] | undefined) => {
     if (!skillList || skillList.length === 0) {
       return (
@@ -118,18 +106,10 @@ export function Skills() {
     );
   };
 
-  const renderSkeletons = () => (
-    <div className="flex flex-wrap justify-center gap-2">
-      {Array.from({ length: 8 }).map((_, i) => (
-        <Skeleton key={i} className="h-10 w-28 rounded-full" />
-      ))}
-    </div>
-  );
-
   return (
     <SectionWrapper id="skills">
       <SectionTitle>My Skills</SectionTitle>
-      <Tabs defaultValue="frontendSkills" className="w-full">
+      <Tabs defaultValue="backendSkills" className="w-full">
         <TabsList className="grid h-auto w-full grid-cols-2 flex-wrap justify-center border bg-card sm:grid-cols-3 md:flex md:h-10">
           {Object.keys(categoryLabels).map((key) => (
             <TabsTrigger key={key} value={key} className="flex items-center">
@@ -141,15 +121,13 @@ export function Skills() {
 
         {Object.entries(categoryLabels).map(([key]) => (
           <TabsContent key={key} value={key}>
-            <Card className="border-0 shadow-none">
+            <Card className="border-0 bg-transparent shadow-none">
               <CardContent className="pt-6">
-                {loading
-                  ? renderSkeletons()
-                  : renderSkills(
-                      skills?.[
-                        key as keyof GenerateCategorizedSkillsOutput
-                      ] as string[]
-                    )}
+                {renderSkills(
+                  categorizedSkills[
+                    key as keyof typeof categorizedSkills
+                  ] as string[]
+                )}
               </CardContent>
             </Card>
           </TabsContent>
