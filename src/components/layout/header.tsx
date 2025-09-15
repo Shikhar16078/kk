@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { navLinks } from '@/lib/data';
 import { cn } from '@/lib/utils';
-import { Code2, Menu } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Button } from '../ui/button';
 import { ThemeToggleButton } from '../ui/theme-toggle-button';
@@ -33,7 +34,13 @@ export function Header() {
     >
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <Code2 className="h-8 w-8 text-primary" />
+          <Image
+            src="/profile.jpg"
+            alt="Kshittiz profile photo"
+            width={32}
+            height={32}
+            className="rounded-full"
+          />
           <span className="font-headline text-2xl font-bold">Kshittiz</span>
         </Link>
 
