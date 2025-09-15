@@ -25,7 +25,7 @@ export function Experience() {
         <div className="absolute left-3 top-5 -z-10 h-[calc(100%-2rem)] w-0.5 bg-border md:left-5"></div>
         {workExperience.map((job, index) => (
           <div key={index} className="relative pl-12 md:pl-16">
-            <div className="absolute -left-2 top-3 flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary bg-background p-2 md:left-0">
+            <div className="absolute -left-2 top-5 flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary bg-background p-2 md:left-0">
               <Building className="h-5 w-5 text-primary" />
             </div>
             <Card>
