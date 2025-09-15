@@ -32,7 +32,7 @@ export function Education() {
               <Card className="flex h-full flex-col">
                 <CardHeader>
                   <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 p-1">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 p-1">
                       <Image
                         src={educationLogos[edu.institution]}
                         alt={`${edu.institution} logo`}
