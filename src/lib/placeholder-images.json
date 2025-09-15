@@ -3,7 +3,7 @@
     {
       "id": "profile-photo",
       "description": "Professional headshot of a software developer",
-      "imageUrl": "/profile.jpg",
+      "imageUrl": "images/profile.jpg",
       "imageHint": "professional headshot"
     }
   ]
