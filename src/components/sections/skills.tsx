@@ -56,19 +56,22 @@ const allSkills = [
 ];
 
 export function Skills() {
+  const duplicatedSkills = [...allSkills, ...allSkills];
   return (
     <SectionWrapper id="skills">
       <SectionTitle>Skills</SectionTitle>
-      <div className="flex flex-wrap justify-center gap-2">
-        {allSkills.map((skill) => (
-          <Badge
-            key={skill}
-            variant="secondary"
-            className="border-primary/20 bg-primary/10 px-4 py-2 text-md text-primary hover:bg-primary/20"
-          >
-            {skill}
-          </Badge>
-        ))}
+      <div className="relative w-full overflow-hidden">
+        <div className="flex w-max animate-scroll-horizontal">
+          {duplicatedSkills.map((skill, index) => (
+            <Badge
+              key={`${skill}-${index}`}
+              variant="secondary"
+              className="mx-2 whitespace-nowrap border-primary/20 bg-primary/10 px-4 py-2 text-md text-primary hover:bg-primary/20"
+            >
+              {skill}
+            </Badge>
+          ))}
+        </div>
       </div>
     </SectionWrapper>
   );
