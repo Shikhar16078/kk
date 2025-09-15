@@ -82,10 +82,6 @@
     animation: breathing-neon 3s ease-in-out infinite;
   }
 
-  .animate-scroll-horizontal {
-    animation: scroll-horizontal 80s linear infinite;
-  }
-
   @keyframes breathing-neon {
     0%,
     100% {
