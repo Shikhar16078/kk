@@ -7,7 +7,7 @@
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
     "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
     "build": "next build",
-    "deploy": "NEXT_PUBLIC_BASE_PATH=/kk next build && touch out/.nojekyll && gh-pages -d out --dotfiles",
+    "deploy": "GITHUB_PAGES=true NEXT_PUBLIC_BASE_PATH=/kk next build && touch out/.nojekyll && gh-pages -d out --dotfiles",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
