@@ -54,7 +54,7 @@ export function Projects() {
             className="flex w-fit items-center gap-2 border-primary/50 text-primary"
           >
             <FolderKanban className="h-4 w-4" />
-            <span>{project.type} Project</span>
+            <span>{project.type}</span>
           </Badge>
         </div>
         <CardDescription>{project.description}</CardDescription>
@@ -106,7 +106,7 @@ export function Projects() {
               {projects.map((project) => (
                 <CarouselItem
                   key={project.id}
-                  className="basis-full md:basis-1/2 lg:basis-1/3"
+                  className="basis-full md:basis-1/2 2xl:basis-1/3"
                 >
                   <div className="p-1 h-full">
                     <ProjectCard project={project} />
