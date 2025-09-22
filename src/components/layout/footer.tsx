@@ -2,13 +2,15 @@ import { personalData } from '@/lib/data';
 import Image from 'next/image';
 import Link from 'next/link';
 
+const isGithubPages = process.env.GITHUB_PAGES === 'true';
+
 export function Footer() {
   return (
     <footer className="border-t">
       <div className="container mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-8 sm:flex-row sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/profile.jpg"
+            src={(isGithubPages ? '/kk' : '') + '/profile.jpg'}
             alt="Kshittiz profile photo"
             width={24}
             height={24}

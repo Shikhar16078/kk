@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
+const isGithubPages = process.env.GITHUB_PAGES === 'true';
+
 export function Hero() {
   return (
     <section id="about" className="py-24 sm:py-32">
@@ -19,7 +21,7 @@ export function Hero() {
                 <span className="inline-flex items-center gap-1">
                   <span className="whitespace-nowrap">Microsoft</span>
                   <Image
-                    src="/images/microsoft_logo.png"
+                    src={(isGithubPages ? '/kk' : '') + '/images/microsoft_logo.png'}
                     alt="Microsoft logo"
                     width={20}
                     height={20}
@@ -63,7 +65,7 @@ export function Hero() {
           <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
             <div className="relative h-80 w-80">
               <Image
-                src="/profile.jpg"
+                src={(isGithubPages ? '/kk' : '') + '/profile.jpg'}
                 alt="Profile Photo"
                 width={400}
                 height={400}
