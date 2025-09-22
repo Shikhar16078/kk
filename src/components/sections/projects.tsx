@@ -35,9 +35,6 @@ export function Projects() {
   const [showAll, setShowAll] = useState(false);
   const isMobile = useIsMobile();
 
-  const displayedProjects =
-    showAll || isMobile ? projects : projects.slice(0, 3);
-
   const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => (
     <Card className="flex h-full flex-col transition-transform duration-300 ease-in-out hover:-translate-y-1">
       <CardHeader>
@@ -92,7 +89,7 @@ export function Projects() {
       <SectionTitle>Projects</SectionTitle>
 
       <div className={cn('relative transition-all duration-500 ease-in-out')}>
-        {showAll ? (
+        {isMobile || showAll ? (
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
               <ProjectCard key={project.id} project={project} />
@@ -109,7 +106,7 @@ export function Projects() {
               {projects.map((project) => (
                 <CarouselItem
                   key={project.id}
-                  className="basis-full md:basis-1/2 2xl:basis-1/3"
+                  className="basis-full md:basis-1/2 lg:basis-1/3"
                 >
                   <div className="p-1 h-full">
                     <ProjectCard project={project} />
