@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { personalData } from '@/lib/data';
 import { Button } from '@/components/ui/button';
@@ -19,7 +21,7 @@ export function Hero() {
                 <span className="inline-flex items-center gap-1">
                   <span className="whitespace-nowrap">Microsoft</span>
                   <Image
-                    src="/images/microsoft.png"
+                    src={'/images/microsoft.png'}
                     alt="Microsoft logo"
                     width={20}
                     height={20}
@@ -63,7 +65,7 @@ export function Hero() {
           <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
             <div className="relative h-80 w-80">
               <Image
-                src="/images/profile.jpg"
+                src={'/images/profile.jpg'}
                 alt="Profile Photo"
                 width={400}
                 height={400}
