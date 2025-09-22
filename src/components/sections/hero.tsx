@@ -36,7 +36,7 @@ export function Hero() {
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button asChild size="lg" className="w-auto px-8">
-                <Link href="#contact">Contact Me</Link>
+                <Link href="#contact">Contact Me</Link>              
               </Button>
               <div className="flex items-center gap-4">
                 {personalData.contact.social.map((social) => (
