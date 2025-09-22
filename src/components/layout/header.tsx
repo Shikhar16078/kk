@@ -48,12 +48,21 @@ export function Header() {
           href={link.href}
           onClick={handleLinkClick}
           className={cn(
-            'flex items-center gap-2 font-medium text-foreground/70 transition-all duration-200 ease-in-out hover:scale-110 hover:text-primary',
-            mobile && 'text-lg'
+            'group flex items-center gap-2 font-medium text-foreground/70 transition-all duration-300 hover:text-primary',
+            mobile ? 'text-lg' : 'p-2 rounded-md hover:bg-accent'
           )}
         >
-          <link.icon className={cn('h-4 w-4', mobile && 'h-5 w-5')} />
-          <span>{link.label}</span>
+          <link.icon className={cn('h-5 w-5 shrink-0')} />
+          <span
+            className={cn(
+              'transition-all duration-300',
+              mobile
+                ? 'opacity-100'
+                : 'w-0 opacity-0 group-hover:w-auto group-hover:opacity-100'
+            )}
+          >
+            {link.label}
+          </span>
         </a>
       ))}
     </>
@@ -80,7 +89,7 @@ export function Header() {
           <span className="font-headline text-2xl font-bold">Kshittiz</span>
         </Link>
 
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-1 md:flex">
           <NavLinkItems />
         </nav>
 
