@@ -42,7 +42,7 @@ export function Projects() {
     <Card className="flex h-full flex-col transition-transform duration-300 ease-in-out hover:-translate-y-1">
       <CardHeader>
         <CardTitle className="font-headline text-xl">{project.title}</CardTitle>
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap gap-2">
           <Badge
             variant="outline"
             className="flex w-fit items-center gap-2 border-primary/50 text-primary"
@@ -57,7 +57,7 @@ export function Projects() {
             className="flex w-fit items-center gap-2 border-primary/50 text-primary"
           >
             <FolderKanban className="h-4 w-4" />
-            <span>{project.type}</span>
+            <span>{project.type} Project</span>
           </Badge>
         </div>
         <CardDescription>{project.description}</CardDescription>
@@ -72,15 +72,17 @@ export function Projects() {
         </div>
       </CardContent>
       <CardFooter className="flex gap-4">
-        <Button asChild variant="outline">
-          <a
-            href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Github /> Source
-          </a>
-        </Button>
+        {project.githubUrl && project.githubUrl !== '#' && (
+          <Button asChild variant="outline">
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github /> Source
+            </a>
+          </Button>
+        )}
       </CardFooter>
     </Card>
   );
@@ -107,7 +109,7 @@ export function Projects() {
               {projects.map((project) => (
                 <CarouselItem
                   key={project.id}
-                  className="basis-full md:basis-1/2 lg:basis-1/3"
+                  className="basis-full md:basis-1/2 2xl:basis-1/3"
                 >
                   <div className="p-1 h-full">
                     <ProjectCard project={project} />

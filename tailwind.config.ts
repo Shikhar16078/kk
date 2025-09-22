@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        '2xl': '1400px',
+      },
       fontFamily: {
         body: ['Inter', 'sans-serif'],
         headline: ['Space Grotesk', 'sans-serif'],
