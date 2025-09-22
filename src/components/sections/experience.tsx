@@ -30,6 +30,7 @@ const companyLogos: { [key: string]: string } = {
 
 export function Experience() {
   const [expanded, setExpanded] = useState<{ [key: number]: boolean }>({});
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
   const toggleExpanded = (index: number) => {
     setExpanded((prev) => ({ ...prev, [index]: !prev[index] }));
@@ -60,7 +61,7 @@ export function Experience() {
                       <span className="flex items-center gap-2">
                         {companyLogos[job.company] ? (
                           <Image
-                            src={companyLogos[job.company]}
+                            src={basePath + companyLogos[job.company]}
                             alt={`${job.company} logo`}
                             width={16}
                             height={16}

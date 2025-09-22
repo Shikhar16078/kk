@@ -24,6 +24,7 @@ const educationLogos: { [key: string]: string } = {
 };
 
 export function Education() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   return (
     <SectionWrapper id="education">
       <SectionTitle>Education</SectionTitle>
@@ -42,7 +43,7 @@ export function Education() {
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 p-1">
                     <Image
-                      src={educationLogos[edu.institution]}
+                      src={basePath + educationLogos[edu.institution]}
                       alt={`${edu.institution} logo`}
                       width={40}
                       height={40}

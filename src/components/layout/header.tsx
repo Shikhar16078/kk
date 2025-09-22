@@ -19,6 +19,7 @@ import {
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -93,7 +94,7 @@ export function Header() {
         <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src={'/images/profile.jpg'}
+              src={basePath + '/images/profile.jpg'}
               alt="Kshittiz profile photo"
               width={32}
               height={32}

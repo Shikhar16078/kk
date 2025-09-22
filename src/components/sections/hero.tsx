@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
 export function Hero() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   return (
     <section id="about" className="py-24 sm:py-32">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -21,7 +22,7 @@ export function Hero() {
                 <span className="inline-flex items-center gap-1">
                   <span className="whitespace-nowrap">Microsoft</span>
                   <Image
-                    src={'/images/microsoft.png'}
+                    src={basePath + '/images/microsoft.png'}
                     alt="Microsoft logo"
                     width={20}
                     height={20}
@@ -65,7 +66,7 @@ export function Hero() {
           <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
             <div className="relative h-80 w-80">
               <Image
-                src={'/images/profile.jpg'}
+                src={basePath + '/images/profile.jpg'}
                 alt="Profile Photo"
                 width={400}
                 height={400}
