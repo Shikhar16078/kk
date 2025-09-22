@@ -1,6 +1,6 @@
 import type {NextConfig} from 'next';
 
-const repoName = process.env.GITHUB_REPOSITORY ? process.env.GITHUB_REPOSITORY.split('/')[1] : '';
+const repoName = 'kk';
 
 const nextConfig: NextConfig = {
   output: 'export',
