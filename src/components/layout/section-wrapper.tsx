@@ -13,7 +13,13 @@ export function SectionWrapper({
   className,
 }: SectionWrapperProps) {
   return (
-    <section id={id} className={cn('py-16 md:py-24', className)}>
+    <section
+      id={id}
+      className={cn(
+        'py-16 md:py-24 min-h-screen flex flex-col justify-center',
+        className
+      )}
+    >
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {children}
       </div>
