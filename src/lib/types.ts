@@ -47,6 +47,7 @@ export type Project = {
   description: string;
   startDate: string;
   endDate: string;
+  type: 'Academic' | 'Personal Project';
   techStack: string[];
   liveDemoUrl: string;
   githubUrl: string;

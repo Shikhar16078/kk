@@ -13,7 +13,13 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Github, ChevronDown, ChevronUp, CalendarDays } from 'lucide-react';
+import {
+  Github,
+  ChevronDown,
+  ChevronUp,
+  CalendarDays,
+  FolderKanban,
+} from 'lucide-react';
 import {
   Carousel,
   CarouselContent,
@@ -36,15 +42,24 @@ export function Projects() {
     <Card className="flex h-full flex-col transition-transform duration-300 ease-in-out hover:-translate-y-1">
       <CardHeader>
         <CardTitle className="font-headline text-xl">{project.title}</CardTitle>
-        <Badge
-          variant="outline"
-          className="flex w-fit items-center gap-2 border-primary/50 text-primary"
-        >
-          <CalendarDays className="h-4 w-4" />
-          <span>
-            {project.startDate} - {project.endDate}
-          </span>
-        </Badge>
+        <div className="flex flex-wrap items-center gap-2">
+          <Badge
+            variant="outline"
+            className="flex w-fit items-center gap-2 border-primary/50 text-primary"
+          >
+            <CalendarDays className="h-4 w-4" />
+            <span>
+              {project.startDate} - {project.endDate}
+            </span>
+          </Badge>
+          <Badge
+            variant="outline"
+            className="flex w-fit items-center gap-2 border-primary/50 text-primary"
+          >
+            <FolderKanban className="h-4 w-4" />
+            <span>{project.type}</span>
+          </Badge>
+        </div>
         <CardDescription>{project.description}</CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
