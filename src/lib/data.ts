@@ -146,6 +146,8 @@ export const projects: Project[] = [
     title: 'Clustering - data set',
     description:
       'Used various clustering algorithms (Hierarchical, k-means, DBSCAN & Gaussian Decomposition) on dummy data set to find optimal number of clusters. Used python libraries for analysis.',
+    startDate: '2019',
+    endDate: '2019',
     techStack: ['Python', 'scikit-learn', 'Hierarchical Clustering', 'K-Means'],
     liveDemoUrl: '#',
     githubUrl: '#',
@@ -156,6 +158,8 @@ export const projects: Project[] = [
     title: 'Forecasting time-series & analysis',
     description:
       'Analyzed various forecasting algorithms like Exponential Smoothing, Simple Moving Average, AR(p) etc. to determine the best model for a time series. Used python libraries for analysis.',
+    startDate: '2019',
+    endDate: '2019',
     techStack: ['Python', 'Pandas', 'StatsModels', 'Time Series Analysis'],
     liveDemoUrl: '#',
     githubUrl: '#',
@@ -166,6 +170,8 @@ export const projects: Project[] = [
     title: 'Multivariable Regression using Python',
     description:
       'Developed a multivariable regression to establish a relation between dependent variable Y and 5-tuples of Independent variables using python statistical packages. Performed residual analysis using Q-Q plot and scatter plot.',
+    startDate: '2018',
+    endDate: '2018',
     techStack: ['Python', 'StatsModels', 'Regression Analysis', 'Matplotlib'],
     liveDemoUrl: '#',
     githubUrl: '#',
@@ -176,6 +182,8 @@ export const projects: Project[] = [
     title: 'Android apk analysis using Flowdroid',
     description:
       'Successfully analyzed 50 android apk files for privacy leaks using Flowdroid taint analysis tool. Created scripts using Java for automating analysis and to deduce relations between various privacy violations.',
+    startDate: '2018',
+    endDate: '2018',
     techStack: ['Java', 'Flowdroid', 'Static Analysis', 'Android Security'],
     liveDemoUrl: '#',
     githubUrl: '#',
@@ -186,6 +194,8 @@ export const projects: Project[] = [
     title: 'Writing Integration test cases using RSpec',
     description:
       "Contributed to the Expertiza project by writing integration test cases for the 'Response controller' using RSpec, helping to ensure the software's quality and reliability.",
+    startDate: '2018',
+    endDate: '2018',
     techStack: ['Ruby', 'RSpec', 'Testing', 'Rails'],
     liveDemoUrl: '#',
     githubUrl: '#',
@@ -196,6 +206,8 @@ export const projects: Project[] = [
     title: 'Resource conainers - Memory',
     description:
       'Introduced a new abstraction called Resource containers for memory sharing in the Linux kernel using C. Tasks within the same container can share a pool of memory locations, while tasks in different containers cannot.',
+    startDate: '2018',
+    endDate: '2018',
     techStack: ['C', 'Linux Kernel', 'Operating Systems', 'Memory Management'],
     liveDemoUrl: '#',
     githubUrl: '#',
@@ -206,6 +218,8 @@ export const projects: Project[] = [
     title: 'Resource containers - processor',
     description:
       'Introduced a new abstraction for resource allocation in the Linux kernel by creating resource containers. Each thread can be assigned to a container with its own scheduling policy and lock, allowing for better resource utilization.',
+    startDate: '2018',
+    endDate: '2018',
     techStack: ['C', 'Linux Kernel', 'Operating Systems', 'CPU Scheduling'],
     liveDemoUrl: '#',
     githubUrl: '#',
@@ -216,6 +230,8 @@ export const projects: Project[] = [
     title: 'Hotel Chain Management System',
     description:
       'A fully functional Swing-based application for managing a hotel chain. Developed a 3-layered MVC architecture using Java and was responsible for the full-stack development of the manager view.',
+    startDate: '2014',
+    endDate: '2014',
     techStack: ['Java', 'Swing', 'MVC', 'SQL', 'JDBC'],
     liveDemoUrl: '#',
     githubUrl: '#',
@@ -226,6 +242,8 @@ export const projects: Project[] = [
     title: 'PCAP File Analysis',
     description:
       'Analyzed PCAP files for attacks and network characteristics using tools like Wireshark and Bro. Wrote Python scripts to analyze packet frequency and plotted statistics using Gnuplot.',
+    startDate: '2014',
+    endDate: '2014',
     techStack: [
       'Python',
       'Wireshark',
@@ -242,6 +260,8 @@ export const projects: Project[] = [
     title: 'Secure Netcat using AES-GCM Encryption',
     description:
       'Simulated the Netcat utility in Python and embedded encryption/decryption through AES-GCM using the pycryptodome library to create a secure communication channel.',
+    startDate: '2014',
+    endDate: '2014',
     techStack: ['Python', 'AES-GCM', 'Cryptography', 'pycryptodome'],
     liveDemoUrl: '#',
     githubUrl: '#',
@@ -252,6 +272,8 @@ export const projects: Project[] = [
     title: 'Slack based bot application - UtiloBot',
     description:
       "A bot designed using Node.js and Agile methodologies to ease the process of fetching pull-requests, emails, issues and meeting invites. Designed algorithm for analysis of Travis build status for each 'pull request' email.",
+    startDate: '2016',
+    endDate: '2016',
     techStack: ['Node.js', 'Slack API', 'Trello', 'Agile'],
     liveDemoUrl: '#',
     githubUrl: '#',
@@ -262,6 +284,8 @@ export const projects: Project[] = [
     title: 'Car Rental Web Application - GoMILES',
     description:
       'A car rental web application designed and developed using Ruby on Rails along with Bootstrap. Designed the front-end (view) and controllers for user permissions and car reservations.',
+    startDate: '2018',
+    endDate: '2018',
     techStack: ['Ruby on Rails', 'Bootstrap', 'MVC', 'SQL'],
     liveDemoUrl: '#',
     githubUrl: '#',

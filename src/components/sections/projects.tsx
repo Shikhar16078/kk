@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Github, ChevronDown, ChevronUp } from 'lucide-react';
+import { Github, ChevronDown, ChevronUp, CalendarDays } from 'lucide-react';
 import {
   Carousel,
   CarouselContent,
@@ -32,6 +32,44 @@ export function Projects() {
   const displayedProjects =
     showAll || isMobile ? projects : projects.slice(0, 3);
 
+  const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => (
+    <Card className="flex h-full flex-col transition-transform duration-300 ease-in-out hover:-translate-y-1">
+      <CardHeader>
+        <CardTitle className="font-headline text-xl">{project.title}</CardTitle>
+        <Badge
+          variant="outline"
+          className="flex w-fit items-center gap-2 border-primary/50 text-primary"
+        >
+          <CalendarDays className="h-4 w-4" />
+          <span>
+            {project.startDate} - {project.endDate}
+          </span>
+        </Badge>
+        <CardDescription>{project.description}</CardDescription>
+      </CardHeader>
+      <CardContent className="flex-grow">
+        <div className="flex flex-wrap gap-2">
+          {project.techStack.map((tech) => (
+            <Badge key={tech} variant="secondary">
+              {tech}
+            </Badge>
+          ))}
+        </div>
+      </CardContent>
+      <CardFooter className="flex gap-4">
+        <Button asChild variant="outline">
+          <a
+            href={project.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Github /> Source
+          </a>
+        </Button>
+      </CardFooter>
+    </Card>
+  );
+
   return (
     <SectionWrapper id="projects">
       <SectionTitle>Projects</SectionTitle>
@@ -40,37 +78,7 @@ export function Projects() {
         {showAll ? (
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
-              <Card
-                key={project.id}
-                className="flex h-full flex-col transition-transform duration-300 ease-in-out hover:-translate-y-1"
-              >
-                <CardHeader>
-                  <CardTitle className="font-headline text-xl">
-                    {project.title}
-                  </CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <div className="flex flex-wrap gap-2">
-                    {project.techStack.map((tech) => (
-                      <Badge key={tech} variant="secondary">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter className="flex gap-4">
-                  <Button asChild variant="outline">
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github /> Source
-                    </a>
-                  </Button>
-                </CardFooter>
-              </Card>
+              <ProjectCard key={project.id} project={project} />
             ))}
           </div>
         ) : (
@@ -87,34 +95,7 @@ export function Projects() {
                   className="basis-full md:basis-1/2 lg:basis-1/3"
                 >
                   <div className="p-1 h-full">
-                    <Card className="flex h-full flex-col transition-transform duration-300 ease-in-out hover:-translate-y-1">
-                      <CardHeader>
-                        <CardTitle className="font-headline text-xl">
-                          {project.title}
-                        </CardTitle>
-                        <CardDescription>{project.description}</CardDescription>
-                      </CardHeader>
-                      <CardContent className="flex-grow">
-                        <div className="flex flex-wrap gap-2">
-                          {project.techStack.map((tech) => (
-                            <Badge key={tech} variant="secondary">
-                              {tech}
-                            </Badge>
-                          ))}
-                        </div>
-                      </CardContent>
-                      <CardFooter className="flex gap-4">
-                        <Button asChild variant="outline">
-                          <a
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <Github /> Source
-                          </a>
-                        </Button>
-                      </CardFooter>
-                    </Card>
+                    <ProjectCard project={project} />
                   </div>
                 </CarouselItem>
               ))}

@@ -25,7 +25,7 @@ export type PersonalData = {
 
 export type WorkExperience = {
   company: string;
-  role: string;
+  role:string;
   startDate: string;
   endDate: string;
   accomplishments: string[];
@@ -45,6 +45,8 @@ export type Project = {
   id: string;
   title: string;
   description: string;
+  startDate: string;
+  endDate: string;
   techStack: string[];
   liveDemoUrl: string;
   githubUrl: string;
